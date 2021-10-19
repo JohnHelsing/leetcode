@@ -1,0 +1,18 @@
+##----------target--------
+target/
+node_modules/
+npm-debug.log
+*.js.map
+.svn
+
+##----------idea----------
+*.iml
+.idea/
+*.ipr
+*.iws
+
+##----------Other----------
+# osx
+*~
+.DS_Store
+gradle.properties
