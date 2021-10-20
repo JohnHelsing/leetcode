@@ -3,7 +3,7 @@
 >配合IDEA插件 leetcode editor食用
 
 ### 插件模板配置：
-勾上[Custom Template]选项
+勾上[Custom Template]选项  
 0. tempFilePath: 
 ```
 LeetCode\src\main\java\com\helsing

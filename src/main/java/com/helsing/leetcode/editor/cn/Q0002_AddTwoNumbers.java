@@ -46,13 +46,13 @@ public class Q0002_AddTwoNumbers {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        ListNode l1 = new ListNode(9, new ListNode(9));
-        ListNode l2 = new ListNode(9, new ListNode(9, new ListNode(9)));
+        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(9)));
+        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4, new ListNode(9))));
         ListNode res = solution.addTwoNumbers(l1, l2);
-        System.out.println(res.getVal());
-        System.out.println(res.getNext().getVal());
-        System.out.println(res.getNext().getNext().getVal());
-        System.out.println(res.getNext().getNext().getNext().getVal());
+        System.out.println(res.val);
+        System.out.println(res.next.val);
+        System.out.println(res.next.next.val);
+        System.out.println(res.next.next.next.val);
     }
 
     static class ListNode {
@@ -70,14 +70,6 @@ public class Q0002_AddTwoNumbers {
             this.val = val;
             this.next = next;
         }
-
-        public int getVal() {
-            return val;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
     }
 
     static
@@ -85,10 +77,11 @@ public class Q0002_AddTwoNumbers {
     class Solution {
         public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
             // 模拟
-//            return simulate(l1, l2);
+            return simulate(l1, l2);
 
             // 转换成数字
-            return changeToNum(l1, l2);
+            // 不让import包，再见吧，遇到超大数就完犊子了
+//            return changeToNum(l1, l2);
         }
 
         public ListNode simulate(ListNode l1, ListNode l2) {
@@ -118,22 +111,29 @@ public class Q0002_AddTwoNumbers {
             return head;
         }
 
-        public ListNode changeToNum(ListNode l1, ListNode l2) {
-            int res = nodeToInt(l1) + nodeToInt(l2);
-            ListNode resNode = null;
-            int quo = res / 10;
-            while (quo < 10) {
-                int mod = res % 10;
-                if(){
+//        public ListNode changeToNum(ListNode l1, ListNode l2) {
+//            BigDecimal res = nodeToInt(l1).add(nodeToInt(l2));
+//            char[] numChar = res.toString().toCharArray();
+//            ListNode head = new ListNode((numChar[numChar.length - 1] - 48));
+//            ListNode tail = head;
+//            if (numChar.length > 1) {
+//                for (int i = numChar.length - 2; i >= 0; i--) {
+//                    tail.next = new ListNode(numChar[i] - 48);
+//                    tail = tail.next;
+//                }
+//            }
+//            return head;
+//        }
 
-                }
-                resNode
-            }
-        }
-
-        public int nodeToInt(ListNode node) {
-
-        }
+//        public BigDecimal nodeToInt(ListNode node) {
+//            StringBuilder sb = new StringBuilder();
+//            sb.append(node.val);
+//            while (node.next != null) {
+//                sb.append(node.next.val);
+//                node = node.next;
+//            }
+//            return new BigDecimal(sb.reverse().toString());
+//        }
 
     }
 //leetcode submit region end(Prohibit modification and deletion)
