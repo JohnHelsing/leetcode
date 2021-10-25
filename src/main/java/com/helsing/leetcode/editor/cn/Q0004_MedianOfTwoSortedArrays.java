@@ -65,7 +65,7 @@ public class Q0004_MedianOfTwoSortedArrays {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] a = {1, 2, 3};
-        int[] b = {0,0,0,0,1};
+        int[] b = {0, 0, 0, 0, 1};
         System.out.println(solution.findMedianSortedArrays(a, b));
     }
 
@@ -73,35 +73,15 @@ public class Q0004_MedianOfTwoSortedArrays {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+            if (nums1.length == 0) {
+//                return
+            }
             // 二分查找 分别找两个数组的中位数
-            Double n1 = getOne(nums1);
-            Double n2 = getOne(nums2);
-            if (n1 == null) {
-                return n2;
-            } else if (n2 == null) {
-                return n1;
-            } else {
-                return (n1 + n2) / 2.0;
-            }
+            return binary(nums1, nums2);
         }
 
-        public double dis(int[] nums1, int[] nums2) {
+        public double binary(int[] nums1, int[] nums2) {
             return 0;
-        }
-
-        public Double getOne(int[] nums) {
-            if (nums.length == 0) {
-                return null;
-            }
-            if (nums.length == 1) {
-                return (double) nums[0];
-            }
-            if (nums.length % 2 != 0) {
-                return (double) nums[nums.length / 2];
-            } else {
-                int i = nums.length / 2;
-                return (nums[i] + nums[i - 1]) / 2.0;
-            }
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
