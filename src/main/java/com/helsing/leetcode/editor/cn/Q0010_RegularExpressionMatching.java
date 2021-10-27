@@ -96,7 +96,6 @@ public class Q0010_RegularExpressionMatching {
                     if (p.charAt(0) == '*') {
                         continue;
                     }
-
                     if (p.charAt(pi - 1) == s.charAt(si - 1) || p.charAt(pi - 1) == '.') {
                         dp[si][pi] = dp[si - 1][pi - 1];
                     } else if (p.charAt(pi - 1) == '*') {
