@@ -38,6 +38,8 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import com.helsing.leetcode.bean.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,23 +47,6 @@ public class Q0143_ReorderList {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
     static
@@ -81,7 +66,61 @@ public class Q0143_ReorderList {
             if (head == null) {
                 return;
             }
-            List<ListNode> list = new ArrayList<ListNode>();
+            // 转成线性表，用双指针
+//            doublePoint(head);
+
+            // 找中点 反转 合并
+            optimize(head);
+        }
+
+        public void optimize(ListNode head) {
+            ListNode mid = middleNode(head);
+            ListNode l1 = head;
+            ListNode l2 = mid.next;
+            mid.next = null;
+            l2 = reverseList(l2);
+            mergeList(l1, l2);
+        }
+
+        public ListNode middleNode(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast.next != null && fast.next.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return slow;
+        }
+
+        public ListNode reverseList(ListNode head) {
+            ListNode prev = null;
+            ListNode curr = head;
+            while (curr != null) {
+                ListNode nextTemp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = nextTemp;
+            }
+            return prev;
+        }
+
+        public void mergeList(ListNode l1, ListNode l2) {
+            ListNode l1_tmp;
+            ListNode l2_tmp;
+            while (l1 != null && l2 != null) {
+                l1_tmp = l1.next;
+                l2_tmp = l2.next;
+
+                l1.next = l2;
+                l1 = l1_tmp;
+
+                l2.next = l1;
+                l2 = l2_tmp;
+            }
+        }
+
+        public void doublePoint(ListNode head) {
+            List<ListNode> list = new ArrayList<>();
             ListNode node = head;
             while (node != null) {
                 list.add(node);
@@ -98,7 +137,6 @@ public class Q0143_ReorderList {
                 j--;
             }
             list.get(i).next = null;
-
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

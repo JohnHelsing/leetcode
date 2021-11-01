@@ -42,6 +42,8 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import com.helsing.leetcode.bean.ListNode;
+
 public class Q0002_AddTwoNumbers {
 
     public static void main(String[] args) {
@@ -55,22 +57,6 @@ public class Q0002_AddTwoNumbers {
         System.out.println(res.next.next.next.val);
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     static
             //leetcode submit region begin(Prohibit modification and deletion)

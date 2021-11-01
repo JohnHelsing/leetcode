@@ -37,27 +37,12 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import com.helsing.leetcode.bean.ListNode;
+
 public class Q0021_MergeTwoSortedLists {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
     static
