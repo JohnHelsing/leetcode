@@ -71,7 +71,6 @@ public class Q0350_IntersectionOfTwoArraysIi {
                 }
             }
             return Arrays.copyOfRange(intersection, 0, index);
-
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
