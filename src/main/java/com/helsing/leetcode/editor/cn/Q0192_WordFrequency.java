@@ -35,12 +35,12 @@
 
 package com.helsing.leetcode.editor.cn;
 
-public class Q0192_WordFrequency{
-    
-    public static void main(String[]args){
+public class Q0192_WordFrequency {
+
+    public static void main(String[] args) {
 
     }
-    
+
     //There is no code of Java type for this problem
 
     //cat words.txt | sed 's/\s\+/\n/g'|awk NF|sort -r|uniq -c|sort -r|awk '{print $2" "$1}'

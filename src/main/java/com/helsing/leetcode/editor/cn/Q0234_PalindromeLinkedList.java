@@ -35,14 +35,14 @@ package com.helsing.leetcode.editor.cn;
 
 import com.helsing.leetcode.bean.ListNode;
 
-public class Q0234_PalindromeLinkedList{
-    
-    public static void main(String[]args){
+public class Q0234_PalindromeLinkedList {
+
+    public static void main(String[] args) {
         Solution solution = new Solution();
     }
-    
+
     static
-    //leetcode submit region begin(Prohibit modification and deletion)
+            //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -53,11 +53,44 @@ public class Q0234_PalindromeLinkedList{
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public boolean isPalindrome(ListNode head) {
-        return false;
+    class Solution {
+        public boolean isPalindrome(ListNode head) {
+            if (head == null || head.next == null) {
+                return true;
+            }
+            // 方法二
+            ListNode fast = head;
+            ListNode slow = head;
+            ListNode prev = null;
+            // 快慢指针，并同时反转链表前半部分
+            while (fast != null && fast.next != null) {
+                fast = fast.next.next;
+                // 反转
+                ListNode nextNode = slow.next;
+                slow.next = prev;
+                prev = slow;
+                slow = nextNode;
+            }
+            ListNode prepre = slow;
+            if (fast != null) {
+                slow = slow.next;
+            }
+            // 比较值并反转还原前半部分
+            boolean isPalindrome = true;
+            while (prev != null) {
+                if (slow.val != prev.val) {
+                    isPalindrome = false;
+                }
+                slow = slow.next;
+                // 前半部分再次反转
+                ListNode nextNode = prev.next;
+                prev.next = prepre;
+                prepre = prev;
+                prev = nextNode;
+            }
+            return isPalindrome;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

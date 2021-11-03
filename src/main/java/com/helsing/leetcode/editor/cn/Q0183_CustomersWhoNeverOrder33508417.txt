@@ -1,0 +1,4 @@
+# Write your MySQL query statement below
+select a.name Customers from customers a left join orders b on a.id=b.customerId where b.id is null
+#runtime:187 ms
+#memory:N/A

@@ -1,0 +1,4 @@
+# Write your MySQL query statement below
+select class from (select student,class from courses group by student,class) t group by class having count(class)>4
+#runtime:2147 ms
+#memory:N/A

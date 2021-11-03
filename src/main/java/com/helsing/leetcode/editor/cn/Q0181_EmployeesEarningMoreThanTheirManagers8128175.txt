@@ -1,0 +1,4 @@
+# Write your MySQL query statement below
+select name Employee from (select a.name,b.name managerName,a.salary,b.salary managerSalary from employee a left join employee b on a.managerid=b.id where a.managerid is not null)  t where t.salary >t.managerSalary
+#runtime:554 ms
+#memory:N/A

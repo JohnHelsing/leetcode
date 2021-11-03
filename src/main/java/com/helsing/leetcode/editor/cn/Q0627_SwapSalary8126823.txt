@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+#select id,name,salary,case when sex='f' then 'm' when sex='m' then 'f' end sex from salary
+UPDATE salary SET sex  = (CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END)
+#runtime:605 ms
+#memory:N/A

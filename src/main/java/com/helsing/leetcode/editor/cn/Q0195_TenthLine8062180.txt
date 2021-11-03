@@ -1,0 +1,19 @@
+# Read from the file file.txt and output the tenth line to stdout.
+# 方法一: awk
+#cat file.txt|awk 'NR==10 {print $0}'
+awk 'NR==10' file.txt
+
+# 方法二: sed
+#cat file.txt|sed -n '10p'
+
+# 方法三: head & tail
+#[[ $(cat file.txt|wc -l) -ge 10 ]] && head -n10 file.txt|tail -n1
+
+# 方法四: loop
+# n=1
+# cat file.txt| while read line;do
+#   [ $n -eq 10 ] && echo $line
+#   ((n++))
+# done
+#runtime:8 ms
+#memory:N/A
