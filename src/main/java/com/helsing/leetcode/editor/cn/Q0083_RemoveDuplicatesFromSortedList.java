@@ -65,6 +65,7 @@ public class Q0083_RemoveDuplicatesFromSortedList {
                     cur = cur.next;
                 }
             }
+            return head;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
