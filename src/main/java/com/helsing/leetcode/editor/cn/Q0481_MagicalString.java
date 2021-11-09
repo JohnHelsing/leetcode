@@ -62,7 +62,6 @@ public class Q0481_MagicalString {
                 }
             }
             return res;
-
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -86,10 +86,10 @@ public class Q0165_CompareVersionNumbers {
 //            return split(version1, version2);
 
             // 双指针
-            return doublePoint(version1, version2);
+            return twoPointers(version1, version2);
         }
 
-        public int doublePoint(String version1, String version2) {
+        public int twoPointers(String version1, String version2) {
             int n = version1.length(), m = version2.length();
             int i = 0, j = 0;
             while (i < n || j < m) {

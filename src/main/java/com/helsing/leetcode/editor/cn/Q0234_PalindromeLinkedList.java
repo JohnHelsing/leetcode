@@ -58,7 +58,10 @@ public class Q0234_PalindromeLinkedList {
             if (head == null || head.next == null) {
                 return true;
             }
-            // 方法二
+            return twoPointersFastAndSlow(head);
+        }
+
+        public boolean twoPointersFastAndSlow(ListNode head) {
             ListNode fast = head;
             ListNode slow = head;
             ListNode prev = null;

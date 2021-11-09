@@ -41,13 +41,13 @@ public class Q0344_ReverseString {
     class Solution {
         public void reverseString(char[] s) {
             // 双指针
-//            towPointer(s);
+//            towPointers(s);
 
             // 递归
             rec(s, 0, s.length - 1);
         }
 
-        public void towPointer(char[] s) {
+        public void towPointers(char[] s) {
             for (int i = 0, j = s.length - 1; i < j; i++, j--) {
                 char temp = s[i];
                 s[i] = s[j];

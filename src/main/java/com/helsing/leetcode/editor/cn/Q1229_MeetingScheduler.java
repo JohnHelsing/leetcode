@@ -59,10 +59,10 @@ public class Q1229_MeetingScheduler {
     class Solution {
         public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
             // 双指针
-            return doublePoint(slots1, slots2, duration);
+            return twoPointers(slots1, slots2, duration);
         }
 
-        public List<Integer> doublePoint(int[][] slots1, int[][] slots2, int duration) {
+        public List<Integer> twoPointers(int[][] slots1, int[][] slots2, int duration) {
             Arrays.sort(slots1, (a, b) -> (a[1] - b[1]));
             Arrays.sort(slots2, (a, b) -> (a[1] - b[1]));
             for (int i = 0, j = 0; i < slots1.length && j < slots2.length; ) {

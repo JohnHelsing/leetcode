@@ -64,10 +64,10 @@ public class Q0876_MiddleOfTheLinkedList {
 //            return array(head);
 
             // 快慢指针
-            return slowFast(head);
+            return twoPointersWithFastAndSlow(head);
         }
 
-        public ListNode slowFast(ListNode head) {
+        public ListNode twoPointersWithFastAndSlow(ListNode head) {
             ListNode slow = head, fast = head;
             while (fast != null && fast.next != null) {
                 slow = slow.next;

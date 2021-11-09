@@ -26,9 +26,15 @@ public class Q0283_MoveZeroes {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public void moveZeroes(int[] nums) {
+            // 特判
             if (nums == null) {
                 return;
             }
+            // 双指针
+            twoPointers(nums);
+        }
+
+        public void twoPointers(int[] nums) {
             int n = nums.length, left = 0, right = 0;
             while (right < n) {
                 if (nums[right] != 0) {

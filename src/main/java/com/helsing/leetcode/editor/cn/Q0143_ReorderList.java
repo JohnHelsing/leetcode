@@ -67,7 +67,7 @@ public class Q0143_ReorderList {
                 return;
             }
             // 转成线性表，用双指针
-//            doublePoint(head);
+//            twoPointers(head);
 
             // 找中点 反转 合并
             optimize(head);
@@ -119,7 +119,7 @@ public class Q0143_ReorderList {
             }
         }
 
-        public void doublePoint(ListNode head) {
+        public void twoPointers(ListNode head) {
             List<ListNode> list = new ArrayList<>();
             ListNode node = head;
             while (node != null) {

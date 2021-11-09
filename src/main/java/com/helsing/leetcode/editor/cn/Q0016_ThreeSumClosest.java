@@ -36,10 +36,11 @@ public class Q0016_ThreeSumClosest {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int threeSumClosest(int[] nums, int target) {
-            return array(nums, target);
+            // 排序后使用双指针
+            return twoPointersWithSort(nums, target);
         }
 
-        public int array(int[] nums, int target) {
+        public int twoPointersWithSort(int[] nums, int target) {
             Arrays.sort(nums);
             int n = nums.length;
             int best = 10000000;

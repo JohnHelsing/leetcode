@@ -66,13 +66,13 @@ public class Q1214_TwoSumBsts {
     class Solution {
         public boolean twoSumBSTs(TreeNode root1, TreeNode root2, int target) {
             // 两个栈 双指针
-//            return doublePointWithStack(root1, root2, target);
+//            return twoPointersWithStack(root1, root2, target);
 
             // 中序遍历 双指针
-            return doublePointWithSort(root1, root2, target);
+            return twoPointersWithSort(root1, root2, target);
         }
 
-        public boolean doublePointWithSort(TreeNode root1, TreeNode root2, int target) {
+        public boolean twoPointersWithSort(TreeNode root1, TreeNode root2, int target) {
             if (root1 == null || root2 == null)
                 return false;
             List<TreeNode> listA = new ArrayList<>();
@@ -110,7 +110,7 @@ public class Q1214_TwoSumBsts {
         private Deque<TreeNode> rightStack;
         private TreeNode rightCur;
 
-        public boolean doublePointWithStack(TreeNode root1, TreeNode root2, int target) {
+        public boolean twoPointersWithStack(TreeNode root1, TreeNode root2, int target) {
             if (root1 == null || root2 == null) {
                 return false;
             }

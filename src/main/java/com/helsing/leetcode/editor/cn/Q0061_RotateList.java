@@ -40,7 +40,7 @@ public class Q0061_RotateList {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.rotateRight(new ListNode(1, new ListNode(2)),2);
+        solution.rotateRight(new ListNode(1, new ListNode(2)), 2);
     }
 
     static
@@ -57,10 +57,50 @@ public class Q0061_RotateList {
  */
     class Solution {
         public ListNode rotateRight(ListNode head, int k) {
+            // 特判
             if (head == null) {
                 return null;
             }
 
+            // 转换为数组
+//            return array(head, k);
+
+            // 双指针 快慢指针
+            return twoPointersFastAndSlow(head, k);
+        }
+
+        public ListNode twoPointersFastAndSlow(ListNode head, int k) {
+            ListNode temp = head;
+            ListNode fast = head;
+            ListNode slow = head;
+            int len = 0;
+            while (head != null) {
+                head = head.next;
+                len++;
+            }
+            if (k % len == 0) {
+                return temp;
+            }
+            // 快指针先走k步
+            while ((k % len) > 0) {
+                k--;
+                fast = fast.next;
+            }
+            // 慢指针和快指针一起走
+            while (fast.next != null) {
+                fast = fast.next;
+                slow = slow.next;
+            }
+            // 快指针走到链表尾部时，慢指针刚好走到旋转链表（返回的链表）的尾部。
+            ListNode res = slow.next;
+
+            // 把快指针指向的节点连到原链表头部，慢指针指向的节点断开和下一节点的联系。
+            slow.next = null;
+            fast.next = temp;
+            return res;
+        }
+
+        public ListNode array(ListNode head, int k) {
             List<ListNode> list = new ArrayList<>();
             ListNode node = head;
             list.add(node);
@@ -68,20 +108,17 @@ public class Q0061_RotateList {
                 node = node.next;
                 list.add(node);
             }
-
             if (k >= list.size()) {
                 k = k % list.size();
             }
-
             if (k == 0 || head.next == null) {
                 return head;
             }
-
             // 只是第0个变到了第k个 第n-k个变成了第0个
             ListNode newHead = list.get(list.size() - k);
             list.get(list.size() - 1).next = list.get(0);
             // 第n-k个做结尾
-            list.get(list.size() - k-1).next = null;
+            list.get(list.size() - k - 1).next = null;
             return newHead;
         }
     }

@@ -57,7 +57,7 @@ public class Q1871_JumpGameVii {
     class Solution {
         public boolean canReach(String s, int minJump, int maxJump) {
             // 双指针 bfs算法优化
-//            return doublePointWithBFS(s, minJump, maxJump);
+//            return twoPointersWithBFS(s, minJump, maxJump);
 
             // 动态规划
             return dp(s, minJump, maxJump);
@@ -94,7 +94,7 @@ public class Q1871_JumpGameVii {
             return dp[len] == 0;
         }
 
-        public boolean doublePointWithBFS(String s, int minJump, int maxJump) {
+        public boolean twoPointersWithBFS(String s, int minJump, int maxJump) {
             if (s.charAt(s.length() - 1) != '0') {
                 return false;
             }

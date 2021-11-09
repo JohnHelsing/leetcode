@@ -52,10 +52,10 @@ public class Q1679_MaxNumberOfKSumPairs {
     class Solution {
         public int maxOperations(int[] nums, int k) {
             // 双指针
-            return doublePoint(nums, k);
+            return twoPointers(nums, k);
         }
 
-        public int doublePoint(int[] nums, int k) {
+        public int twoPointers(int[] nums, int k) {
             int result = 0;
             //排序
             Arrays.sort(nums);

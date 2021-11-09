@@ -54,6 +54,11 @@ public class Q0167_TwoSumIiInputArrayIsSorted {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] twoSum(int[] numbers, int target) {
+            // 双指针
+            return twoPointers(numbers, target);
+        }
+
+        public int[] twoPointers(int[] numbers, int target) {
             for (int i = 0; i < numbers.length; ++i) {
                 int low = i + 1, high = numbers.length - 1;
                 while (low <= high) {

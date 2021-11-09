@@ -89,8 +89,8 @@ public class Q0141_LinkedListCycle {
             // 哈希表
 //            return hash(head);
 
-            // 快慢指针
-            return fastSlow(head);
+            // 双指针 快慢指针
+            return twoPointersWithFastAndSlow(head);
         }
 
         public boolean hash(ListNode head) {
@@ -104,7 +104,7 @@ public class Q0141_LinkedListCycle {
             return false;
         }
 
-        public boolean fastSlow(ListNode head) {
+        public boolean twoPointersWithFastAndSlow(ListNode head) {
             ListNode slow = head;
             ListNode fast = head.next;
             while (slow != fast) {

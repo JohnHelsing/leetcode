@@ -39,6 +39,11 @@ public class Q0719_FindKThSmallestPairDistance {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int smallestDistancePair(int[] nums, int k) {
+            // 双指针
+            return twoPointersWithSort(nums, k);
+        }
+
+        public int twoPointersWithSort(int[] nums, int k) {
             Arrays.sort(nums);
 
             int lo = 0;

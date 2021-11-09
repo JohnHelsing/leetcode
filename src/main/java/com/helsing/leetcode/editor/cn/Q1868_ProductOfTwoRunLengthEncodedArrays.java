@@ -73,10 +73,10 @@ public class Q1868_ProductOfTwoRunLengthEncodedArrays {
     class Solution {
         public List<List<Integer>> findRLEArray(int[][] encoded1, int[][] encoded2) {
             // 双指针
-            return doublePoint(encoded1, encoded2);
+            return twoPointers(encoded1, encoded2);
         }
 
-        public List<List<Integer>> doublePoint(int[][] encoded1, int[][] encoded2) {
+        public List<List<Integer>> twoPointers(int[][] encoded1, int[][] encoded2) {
             List<List<Integer>> result = new ArrayList<>();
             int i = 0, j = 0;
             while (i < encoded1.length) {

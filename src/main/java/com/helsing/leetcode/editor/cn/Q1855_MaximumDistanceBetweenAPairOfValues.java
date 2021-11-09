@@ -69,6 +69,11 @@ public class Q1855_MaximumDistanceBetweenAPairOfValues {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxDistance(int[] nums1, int[] nums2) {
+            // 双指针
+            return twoPointers(nums1, nums2);
+        }
+
+        public int twoPointers(int[] nums1, int[] nums2) {
             int max = 0;
             int j = 0;
             for (int i = 0; i < nums1.length && j < nums2.length; i++, j = Math.max(j, i)) {

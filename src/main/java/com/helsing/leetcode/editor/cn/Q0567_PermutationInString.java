@@ -43,10 +43,10 @@ public class Q0567_PermutationInString {
     class Solution {
         public boolean checkInclusion(String s1, String s2) {
             // 双指针
-            return doublePoint(s1, s2);
+            return twoPointers(s1, s2);
         }
 
-        public boolean doublePoint(String s1, String s2) {
+        public boolean twoPointers(String s1, String s2) {
             int n = s1.length(), m = s2.length();
             if (n > m) {
                 return false;

@@ -101,11 +101,11 @@ public class Q0151_ReverseWordsInAString {
             int left = 0, right = s.length() - 1;
             // 去掉字符串开头的空白字符
             while (left <= right && s.charAt(left) == ' ') {
-                ++left;
+                left++;
             }
             // 去掉字符串末尾的空白字符
             while (left <= right && s.charAt(right) == ' ') {
-                --right;
+                right--;
             }
             Deque<String> deque = new ArrayDeque<>();
             StringBuilder word = new StringBuilder();

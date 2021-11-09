@@ -69,9 +69,12 @@ public class Q0027_RemoveElement {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int removeElement(int[] nums, int val) {
-            int n = nums.length;
-            int left = 0;
-            int right = nums.length;
+            // 左右双指针
+            return twoPointersLeftAndRight(nums, val);
+        }
+
+        public int twoPointersLeftAndRight(int[] nums, int val) {
+            int left = 0, right = nums.length;
             while (left < right) {
                 if (nums[left] == val) {
                     nums[left] = nums[right - 1];

@@ -55,17 +55,22 @@ public class Q0015_ThreeSum {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
-            return array(nums);
-        }
-
-        public List<List<Integer>> array(int[] nums) {
-            List<List<Integer>> ans = new ArrayList<>();
+            // 特判
             if (nums == null || nums.length < 3) {
-                return ans;
+                return new ArrayList<>();
             }
 
+            // 双指针
+            return twoPointersWithSort(nums);
+        }
+
+        public List<List<Integer>> twoPointersWithSort(int[] nums) {
+            List<List<Integer>> ans = new ArrayList<>();
+
+            // 排序
             Arrays.sort(nums);
 
+            // 双指针
             for (int i = 0; i < nums.length - 2; i++) { // O(n^2)
                 if (nums[i] > 0) {
                     // 第一个数大于 0，后面的数都比它大，肯定不成立了

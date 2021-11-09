@@ -71,10 +71,10 @@ public class Q1616_SplitTwoStringsToMakePalindrome {
     class Solution {
         public boolean checkPalindromeFormation(String a, String b) {
             // 中心扩展法 双指针
-            return doublePoint(a, b);
+            return twoPointers(a, b);
         }
 
-        boolean doublePoint(String a, String b) {
+        boolean twoPointers(String a, String b) {
             int left = a.length() / 2 - 1;
             left = Math.min(check(a, a, left), check(b, b, left));
             left = Math.min(check(a, b, left), check(b, a, left));

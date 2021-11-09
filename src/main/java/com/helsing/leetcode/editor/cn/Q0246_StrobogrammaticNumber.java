@@ -40,6 +40,10 @@ public class Q0246_StrobogrammaticNumber {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isStrobogrammatic(String num) {
+            return twoPointers(num);
+        }
+
+        public boolean twoPointers(String num) {
             char[] reverse = new char[]{'0', '1', 'a', 'a', 'a', 'a', '9', 'a', '8', '6'};
             char[] s = num.toCharArray();
             int left = 0, right = s.length - 1;
@@ -51,7 +55,6 @@ public class Q0246_StrobogrammaticNumber {
                 right--;
             }
             return true;
-
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

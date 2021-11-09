@@ -50,10 +50,10 @@ public class Q0838_PushDominoes {
     class Solution {
         public String pushDominoes(String dominoes) {
             // 双指针
-            return doublePoint(dominoes);
+            return twoPointers(dominoes);
         }
 
-        public String doublePoint(String dominoes) {
+        public String twoPointers(String dominoes) {
             char[] A = dominoes.toCharArray();
             int N = A.length;
             int[] forces = new int[N];

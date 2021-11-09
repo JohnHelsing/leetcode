@@ -73,10 +73,10 @@ public class Q1577_NumberOfWaysWhereSquareOfNumberIsEqualToProductOfTwoNumbers {
 //            return hash(nums1, nums2);
 
             // 双指针
-            return doublePoint(nums1, nums2);
+            return twoPointers(nums1, nums2);
         }
 
-        public int doublePoint(int[] nums1, int[] nums2) {
+        public int twoPointers(int[] nums1, int[] nums2) {
             Arrays.sort(nums1);
             Arrays.sort(nums2);
             return count(nums1, nums2) + count(nums2, nums1);

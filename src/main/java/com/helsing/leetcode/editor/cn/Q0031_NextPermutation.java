@@ -57,16 +57,15 @@ public class Q0031_NextPermutation {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public void nextPermutation(int[] nums) {
-            //从后向前，找到第一个由大变小的
+            // 从后向前，找到第一个由大变小的
             for (int i = nums.length - 1; i > 0; i--) {
                 if (nums[i] > nums[i - 1]) {
-                    //从后向前，找到第一个比nums[i - 1]大的数，两个进行交换
+                    // 从后向前，找到第一个比nums[i - 1]大的数，两个进行交换
                     for (int j = nums.length - 1; j >= i; j--) {
                         if (nums[j] > nums[i - 1]) {
-                            int tmp = nums[j];
-                            nums[j] = nums[i - 1];
-                            nums[i - 1] = tmp;
-                            //快速排序，这里也可以调用Arrays.sort()
+                            // 交换
+                            swap(nums, j, i - 1);
+                            // 快速排序，这里也可以调用Arrays.sort()
                             quickSort(nums, i, nums.length - 1);
                             return;
                         }
@@ -85,18 +84,27 @@ public class Q0031_NextPermutation {
             int l = left, r = right;
             int tmp = nums[l];
             while (l < r) {
-                while (l < r && nums[r] >= tmp) r--;
-                while (l < r && nums[l] <= tmp) l++;
+                while (l < r && nums[r] >= tmp) {
+                    r--;
+                }
+                while (l < r && nums[l] <= tmp) {
+                    l++;
+                }
                 if (l < r) {
-                    int x = nums[l];
-                    nums[l] = nums[r];
-                    nums[r] = x;
+                    swap(nums, l, r);
                 }
             }
             nums[left] = nums[l];
             nums[l] = tmp;
             quickSort(nums, left, l - 1);
             quickSort(nums, l + 1, right);
+        }
+
+        // 交换
+        public void swap(int[] nums, int i, int k) {
+            int temp = nums[i];
+            nums[i] = nums[k];
+            nums[k] = temp;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

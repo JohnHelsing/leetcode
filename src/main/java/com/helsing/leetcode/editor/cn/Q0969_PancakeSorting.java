@@ -70,7 +70,7 @@ public class Q0969_PancakeSorting {
             int N = arr.length;
 
             Integer[] B = new Integer[N];
-            for (int i = 0; i < N; ++i){
+            for (int i = 0; i < N; ++i) {
                 B[i] = i + 1;
             }
             Arrays.sort(B, (i, j) -> arr[j - 1] - arr[i - 1]);

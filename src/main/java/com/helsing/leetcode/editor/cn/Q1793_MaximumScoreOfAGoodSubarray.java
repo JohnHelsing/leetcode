@@ -52,7 +52,7 @@ public class Q1793_MaximumScoreOfAGoodSubarray {
             return stack(nums, k);
 
             // 双指针
-//            return doublePoint(nums, k);
+//            return twoPointers(nums, k);
         }
 
         public int stack(int[] nums, int k) {
@@ -83,7 +83,7 @@ public class Q1793_MaximumScoreOfAGoodSubarray {
             return ans;
         }
 
-        public int doublePoint(int[] nums, int k) {
+        public int twoPointers(int[] nums, int k) {
             int left = k, right = k, n = nums.length;
             int ans = nums[k], min = nums[k];
             while (left > 0 || right < n - 1) {

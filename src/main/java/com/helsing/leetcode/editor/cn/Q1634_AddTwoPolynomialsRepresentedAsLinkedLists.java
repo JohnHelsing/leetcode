@@ -96,10 +96,10 @@ public class Q1634_AddTwoPolynomialsRepresentedAsLinkedLists {
                 return poly1;
             }
             // 双指针
-            return doublePoint(poly1, poly2);
+            return twoPointers(poly1, poly2);
         }
 
-        public PolyNode doublePoint(PolyNode poly1, PolyNode poly2) {
+        public PolyNode twoPointers(PolyNode poly1, PolyNode poly2) {
             // 伪头结点
             PolyNode dummyNode = new PolyNode(0, 0);
             PolyNode cur = dummyNode;

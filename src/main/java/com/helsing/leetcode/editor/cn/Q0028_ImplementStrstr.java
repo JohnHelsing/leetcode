@@ -57,6 +57,7 @@ public class Q0028_ImplementStrstr {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int strStr(String haystack, String needle) {
+            // 特判
             int n = haystack.length(), m = needle.length();
             if (m == 0) {
                 return 0;
@@ -69,8 +70,8 @@ public class Q0028_ImplementStrstr {
             // KMP算法
 //            return KMP(haystack, needle,m,n);
 
-            // JDK自带算法
-            return jdk(haystack, needle);
+            // JDK自带算法 双指针
+            return twoPointers(haystack, needle);
         }
 
         public int KMP(String haystack, String needle, int m, int n) {
@@ -98,23 +99,27 @@ public class Q0028_ImplementStrstr {
             return -1;
         }
 
-        public int jdk(String haystack, String needle) {
+        public int twoPointers(String haystack, String needle) {
             char[] str = needle.toCharArray();
             char[] value = haystack.toCharArray();
             char first = str[0];
             int max = (value.length - str.length);
             for (int i = 0; i <= max; i++) {
                 // Look for first character.
-                if (value[i] != first) {
-                    while (++i <= max && value[i] != first) ;
+                while (i <= max && value[i] != first) {
+                    i++;
                 }
                 // Found first character, now look at the rest of value
                 if (i <= max) {
+                    int k = 1;
                     int j = i + 1;
                     int end = j + str.length - 1;
-                    for (int k = 1; j < end && value[j] == str[k]; j++, k++) ;
+                    while (j < end && value[j] == str[k]) {
+                        j++;
+                        k++;
+                    }
+                    // Found whole string.
                     if (j == end) {
-                        // Found whole string.
                         return i;
                     }
                 }

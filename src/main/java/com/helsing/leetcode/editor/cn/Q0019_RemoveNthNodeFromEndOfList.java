@@ -73,7 +73,28 @@ public class Q0019_RemoveNthNodeFromEndOfList {
 //            return stack(head, n);
 
             // 数组
-            return array(head, n);
+//            return array(head, n);
+
+            // 双指针 先后指针
+            return twoPointersWithPreAndCur(head, n);
+        }
+
+        public ListNode twoPointersWithPreAndCur(ListNode head, int n) {
+            ListNode dummyNode = new ListNode(0);//定义虚拟头节点，避免分类讨论
+            dummyNode.next = head;
+            ListNode pre = dummyNode;
+            ListNode cur = head;
+            int cnt = 0;
+            while (cur != null) {
+                //大于等于n的时候同时移动
+                if (cnt >= n) {
+                    pre = pre.next;
+                }
+                cur = cur.next;
+                cnt++;
+            }
+            pre.next = pre.next.next;
+            return dummyNode.next;
         }
 
         public ListNode stack(ListNode head, int n) {

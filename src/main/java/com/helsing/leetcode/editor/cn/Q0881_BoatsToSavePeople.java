@@ -49,6 +49,11 @@ public class Q0881_BoatsToSavePeople {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int numRescueBoats(int[] people, int limit) {
+            // 双指针
+            return twoPointers(people, limit);
+        }
+
+        public int twoPointers(int[] people, int limit) {
             int ans = 0;
             Arrays.sort(people);
             int light = 0, heavy = people.length - 1;

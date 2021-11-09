@@ -75,9 +75,9 @@ public class Q1537_GetTheMaximumScore {
     class Solution {
         public int maxSum(int[] nums1, int[] nums2) {
             // 双指针
-//            return doublePoint(nums1, nums2);
+//            return twoPointers(nums1, nums2);
             // 动态规划
-            return doublePoint(nums1, nums2);
+            return dp(nums1, nums2);
 
         }
 
@@ -112,7 +112,7 @@ public class Q1537_GetTheMaximumScore {
             return (int) (Math.max(best1, best2) % MOD);
         }
 
-        public int doublePoint(int[] nums1, int[] nums2) {
+        public int twoPointers(int[] nums1, int[] nums2) {
             int n1 = nums1.length, n2 = nums2.length;
             int i = 0, j = 0;
             long r1 = 0, r2 = 0;

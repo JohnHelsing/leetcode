@@ -60,10 +60,11 @@ public class Q1093_StatisticsFromALargeSample {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public double[] sampleStats(int[] count) {
-            return doublePoint(count);
+            // 双指针
+            return towPointers(count);
         }
 
-        public double[] doublePoint(int[] count) {
+        public double[] towPointers(int[] count) {
             double[] result = new double[5];//最小值、最大值、平均值、中位数和众数
             double max = 0;
             double min = 0;

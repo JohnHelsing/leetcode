@@ -48,7 +48,7 @@ public class Q0125_ValidPalindrome {
     class Solution {
         public boolean isPalindrome(String s) {
             // 双指针
-//            return doublePointer(s);
+//            return towPointers(s);
 
             // 字符串反转
 //            return reverse(s);
@@ -90,7 +90,7 @@ public class Q0125_ValidPalindrome {
             return sb.toString().equals(sb.reverse().toString());
         }
 
-        public boolean doublePointer(String s) {
+        public boolean towPointers(String s) {
             char[] array = s.toCharArray();
             int left = 0, right = array.length - 1;
             while (left < right) {

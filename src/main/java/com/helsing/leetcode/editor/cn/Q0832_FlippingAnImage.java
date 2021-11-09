@@ -47,6 +47,11 @@ public class Q0832_FlippingAnImage {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[][] flipAndInvertImage(int[][] image) {
+            // 双指针
+            return twoPointers(image);
+        }
+
+        public int[][] twoPointers(int[][] image) {
             int n = image.length;
             for (int i = 0; i < n; i++) {
                 int left = 0, right = n - 1;

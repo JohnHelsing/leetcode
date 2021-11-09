@@ -42,7 +42,7 @@ public class Q0611_ValidTriangleNumber {
                 int k = i;
                 for (int j = i + 1; j < n; ++j) {
                     while (k + 1 < n && nums[k + 1] < nums[i] + nums[j]) {
-                        ++k;
+                        k++;
                     }
                     ans += Math.max(k - j, 0);
                 }

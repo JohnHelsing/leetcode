@@ -61,6 +61,11 @@ public class Q1768_MergeStringsAlternately {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String mergeAlternately(String word1, String word2) {
+            // 双指针
+            return twoPointers(word1, word2);
+        }
+
+        public String twoPointers(String word1, String word2) {
             int len1 = word1.length(), len2 = word2.length(), idx = 0;
             char[] res = new char[len1 + len2];
             for (int i = 0; i < len1 || i < len2; ++i) {

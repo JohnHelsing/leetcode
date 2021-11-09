@@ -54,6 +54,39 @@ public class Q0086_PartitionList {
  */
     class Solution {
         public ListNode partition(ListNode head, int x) {
+            // 特判
+            if (head == null) {
+                return null;
+            }
+
+            // 插入排序
+//            return insertSort(head, x);
+
+            // 双指针 快慢(读写)指针
+            return twoPointersWithFastAndSlow(head, x);
+        }
+
+        public ListNode twoPointersWithFastAndSlow(ListNode head, int x) {
+            ListNode slow = new ListNode(0);
+            ListNode p = slow, fast = head.next;
+            slow.next = head;
+            while (fast != null) {
+                if (slow.next.val < x) {
+                    slow = slow.next;
+                    head = fast;
+                } else if (fast.val < x) {
+                    head.next = fast.next;
+                    fast.next = slow.next;
+                    slow = slow.next = fast;
+                } else {
+                    head = fast;
+                }
+                fast = head.next;
+            }
+            return p.next;
+        }
+
+        public ListNode insertSort(ListNode head, int x) {
             ListNode small = new ListNode(0);
             ListNode smallHead = small;
             ListNode large = new ListNode(0);
@@ -72,6 +105,7 @@ public class Q0086_PartitionList {
             small.next = largeHead.next;
             return smallHead.next;
         }
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

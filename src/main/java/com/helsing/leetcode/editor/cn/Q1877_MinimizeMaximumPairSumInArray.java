@@ -59,6 +59,10 @@ public class Q1877_MinimizeMaximumPairSumInArray {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int minPairSum(int[] nums) {
+            return twoPointersWithSort(nums);
+        }
+
+        public int twoPointersWithSort(int[] nums) {
             Arrays.sort(nums);
             int left = 0;
             int right = nums.length - 1;

@@ -83,10 +83,10 @@ public class Q1471_TheKStrongestValuesInAnArray {
         public int[] getStrongest(int[] arr, int k) {
             Arrays.sort(arr);
             // 双指针
-            return doublePoint(arr, k);
+            return twoPointers(arr, k);
         }
 
-        public int[] doublePoint(int[] arr, int k) {
+        public int[] twoPointers(int[] arr, int k) {
             int[] target = new int[k];
             int index = 0;
             int mid = arr[(arr.length - 1) / 2];

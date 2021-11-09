@@ -54,6 +54,11 @@ public class Q0977_SquaresOfASortedArray {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] sortedSquares(int[] nums) {
+            // 双指针
+            return twoPointers(nums);
+        }
+
+        public int[] twoPointers(int[] nums) {
             int n = nums.length;
             int[] ans = new int[n];
             int left = 0, right = n - 1, cur = n - 1;

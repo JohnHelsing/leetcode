@@ -77,6 +77,10 @@ public class Q1861_RotatingTheBox {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public char[][] rotateTheBox(char[][] box) {
+            return twoPointers(box);
+        }
+
+        public char[][] twoPointers(char[][] box) {
             int m = box.length, n = box[0].length;
             char[][] ans = new char[n][m];  // 用来构建返回值的二维数组
             // 首先逐行处理，把石头挪到该放的地方去

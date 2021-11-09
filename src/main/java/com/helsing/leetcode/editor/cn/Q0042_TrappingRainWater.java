@@ -43,7 +43,7 @@ public class Q0042_TrappingRainWater {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int trap(int[] height) {
-            // 性能优化
+            // 特判
             if (height.length == 0) {
                 return 0;
             }
@@ -52,8 +52,32 @@ public class Q0042_TrappingRainWater {
             // ignore 计算每个height[i]的接水量 = 左边最大---右边最大 O(n^2)
 
             // 动态规划
-            return dp(height);
+//            return dp(height);
 
+            // 双指针
+            return twoPointersWithLeftAndRight(height);
+        }
+
+        public int twoPointersWithLeftAndRight(int[] height) {
+            int ans = 0;
+            int left = 0, right = height.length - 1;
+            int leftMax = 0, rightMax = 0;
+            while (left < right) {
+                leftMax = Math.max(leftMax, height[left]);
+                rightMax = Math.max(rightMax, height[right]);
+                // 如果height[left] < height[right]
+                // 则必有leftMax<rightMax
+                // 下标left处能接的雨水量等于leftMax - height[left]，
+                // 将下标left处能接的雨水量加到能接的雨水总量，然后left++
+                if (height[left] < height[right]) {
+                    ans += leftMax - height[left];
+                    left++;
+                } else {
+                    ans += rightMax - height[right];
+                    right--;
+                }
+            }
+            return ans;
         }
 
         public int dp(int[] height) {

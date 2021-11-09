@@ -65,10 +65,10 @@ public class Q0148_SortList {
     class Solution {
         public ListNode sortList(ListNode head) {
             // 自顶向下归并排序
-            return upToDown(head, null);
+            return twoPointersUpToDown(head, null);
         }
 
-        public ListNode upToDown(ListNode head, ListNode tail) {
+        public ListNode twoPointersUpToDown(ListNode head, ListNode tail) {
             if (head == null) {
                 return head;
             }
@@ -85,8 +85,8 @@ public class Q0148_SortList {
                 }
             }
             ListNode mid = slow;
-            ListNode list1 = upToDown(head, mid);
-            ListNode list2 = upToDown(mid, tail);
+            ListNode list1 = twoPointersUpToDown(head, mid);
+            ListNode list2 = twoPointersUpToDown(mid, tail);
             ListNode sorted = merge(list1, list2);
             return sorted;
         }

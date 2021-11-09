@@ -92,10 +92,10 @@ public class Q0142_LinkedListCycleIi {
 //            return hash(head);
 
             // 快慢指针
-            return fastSlow(head);
+            return twoPointersWithFastAndSlow(head);
         }
 
-        public ListNode fastSlow(ListNode head) {
+        public ListNode twoPointersWithFastAndSlow(ListNode head) {
             ListNode slow = head, fast = head;
             while (fast != null) {
                 slow = slow.next;

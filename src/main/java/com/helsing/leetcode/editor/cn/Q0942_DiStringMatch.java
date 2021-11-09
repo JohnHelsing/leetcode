@@ -49,6 +49,11 @@ public class Q0942_DiStringMatch {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] diStringMatch(String s) {
+            // 双指针
+            return twoPointers(s);
+        }
+
+        public int[] twoPointers(String s) {
             int n = s.length();
             int lo = 0, hi = n;
             int[] ans = new int[n + 1];

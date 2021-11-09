@@ -52,10 +52,10 @@ public class Q0845_LongestMountainInArray {
     class Solution {
         public int longestMountain(int[] arr) {
             // 双指针
-            return doublePoint(arr);
+            return twoPointers(arr);
         }
 
-        public int doublePoint(int[] arr) {
+        public int twoPointers(int[] arr) {
             int n = arr.length;
             int ans = 0;
             int left = 0;

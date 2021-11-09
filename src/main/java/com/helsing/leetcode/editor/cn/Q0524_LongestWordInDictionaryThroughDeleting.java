@@ -47,9 +47,7 @@ public class Q0524_LongestWordInDictionaryThroughDeleting {
         dic.add("ale");
         dic.add("apple");
         dic.add("monkey");
-        solution.findLongestWord("abpcplea",dic);
-
-
+        solution.findLongestWord("abpcplea", dic);
     }
 
     static
@@ -69,9 +67,9 @@ public class Q0524_LongestWordInDictionaryThroughDeleting {
                 int i = 0, j = 0;
                 while (i < t.length() && j < s.length()) {
                     if (t.charAt(i) == s.charAt(j)) {
-                        ++i;
+                        i++;
                     }
-                    ++j;
+                    j++;
                 }
                 if (i == t.length()) {
                     return t;

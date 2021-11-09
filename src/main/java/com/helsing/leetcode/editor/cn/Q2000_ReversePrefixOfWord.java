@@ -58,6 +58,11 @@ public class Q2000_ReversePrefixOfWord {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String reversePrefix(String word, char ch) {
+            // 双指针
+            return twoPointers(word, ch);
+        }
+
+        public String twoPointers(String word, char ch) {
             int left = 0, right = 0;
             char[] chars = word.toCharArray();
             while (right < word.length() && chars[right] != ch) {
@@ -77,6 +82,7 @@ public class Q2000_ReversePrefixOfWord {
             }
             return new String(chars);
         }
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

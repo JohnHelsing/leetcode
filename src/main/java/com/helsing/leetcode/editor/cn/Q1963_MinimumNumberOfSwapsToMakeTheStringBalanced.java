@@ -68,6 +68,11 @@ public class Q1963_MinimumNumberOfSwapsToMakeTheStringBalanced {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int minSwaps(String s) {
+            // 双指针
+            return twoPointers(s);
+        }
+
+        public int twoPointers(String s) {
             int ans = 0, left = 0, right = 0;
             for (char ch : s.toCharArray()) {
                 if (ch == '[') {

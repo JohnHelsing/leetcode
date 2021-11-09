@@ -73,7 +73,9 @@ public class Q1040_MovingStonesUntilConsecutiveIi {
             int start = 0;
             int hi = Math.max(stones[n - 1] - stones[1] - n + 2, stones[n - 2] - stones[0] - n + 2);
             for (int i = 0; i < stones.length; i++) {
-                while (stones[i] - stones[start] >= n) start++;
+                while (stones[i] - stones[start] >= n) {
+                    start++;
+                }
                 if (i - start + 1 == n - 1 && stones[i] - stones[start] == n - 2) {
                     low = Math.min(low, 2);
                 } else {

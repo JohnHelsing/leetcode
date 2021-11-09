@@ -40,10 +40,10 @@ public class Q1163_LastSubstringInLexicographicalOrder {
     class Solution {
         public String lastSubstring(String s) {
             // 双指针
-            return doublePoint(s);
+            return twoPointers(s);
         }
 
-        public String doublePoint(String s) {
+        public String twoPointers(String s) {
             int left = 0, right = 1, k = 0;
             while (right + k < s.length()) {
                 char leftChar = s.charAt(left);

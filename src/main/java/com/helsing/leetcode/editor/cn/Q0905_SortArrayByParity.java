@@ -35,11 +35,10 @@ public class Q0905_SortArrayByParity {
     class Solution {
         public int[] sortArrayByParity(int[] nums) {
             // 双指针
-            return doublePoint(nums);
-
+            return twoPointers(nums);
         }
 
-        public int[] doublePoint(int[] nums) {
+        public int[] twoPointers(int[] nums) {
             int[] ans = new int[nums.length];
             int left = 0, right = nums.length - 1;
             for (int i = 0; i < nums.length; i++) {

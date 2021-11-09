@@ -46,10 +46,13 @@ public class Q1099_TwoSumLessThanK {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int twoSumLessThanK(int[] nums, int k) {
+            return twoPointersWithSort(nums, k);
+        }
+
+        public int twoPointersWithSort(int[] nums, int k) {
             int ans = -1;
             // 排序
             Arrays.sort(nums);
-            // 双指针查看
             int n = nums.length;
             int left = 0, right = n - 1;
             while (left < right) {

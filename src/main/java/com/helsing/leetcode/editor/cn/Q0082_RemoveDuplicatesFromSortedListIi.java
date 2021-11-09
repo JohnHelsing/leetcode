@@ -57,6 +57,11 @@ public class Q0082_RemoveDuplicatesFromSortedListIi {
             if (head == null || head.next == null) {
                 return head;
             }
+            return twoPointersWithFastAndSlow(head);
+        }
+
+        public ListNode twoPointersWithFastAndSlow(ListNode head) {
+            // 定义哑结点
             ListNode dummy = new ListNode(-1, head);
             ListNode cur = dummy;
             while (cur.next != null && cur.next.next != null) {

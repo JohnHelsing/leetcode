@@ -59,8 +59,8 @@ public class Q0696_CountBinarySubstrings {
                 char c = s.charAt(ptr);
                 int count = 0;
                 while (ptr < n && s.charAt(ptr) == c) {
-                    ++ptr;
-                    ++count;
+                    ptr++;
+                    count++;
                 }
                 ans += Math.min(count, last);
                 last = count;
@@ -75,8 +75,8 @@ public class Q0696_CountBinarySubstrings {
                 char c = s.charAt(ptr);
                 int count = 0;
                 while (ptr < n && s.charAt(ptr) == c) {
-                    ++ptr;
-                    ++count;
+                    ptr++;
+                    count++;
                 }
                 counts.add(count);
             }

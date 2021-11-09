@@ -106,7 +106,7 @@ public class Q0160_IntersectionOfTwoLinkedLists {
 //            return hash(headA, headB);
 
             // 双指针
-            return doublePoint(headA, headB);
+            return twoPointersSwap(headA, headB);
         }
 
         public ListNode hash(ListNode headA, ListNode headB) {
@@ -128,7 +128,7 @@ public class Q0160_IntersectionOfTwoLinkedLists {
         }
 
 
-        public ListNode doublePoint(ListNode headA, ListNode headB) {
+        public ListNode twoPointersSwap(ListNode headA, ListNode headB) {
             ListNode pA = headA, pB = headB;
             while (pA != pB) {
                 pA = pA == null ? headB : pA.next;

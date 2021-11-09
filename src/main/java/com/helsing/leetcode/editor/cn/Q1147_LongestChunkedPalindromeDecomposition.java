@@ -69,10 +69,10 @@ public class Q1147_LongestChunkedPalindromeDecomposition {
     class Solution {
         public int longestDecomposition(String text) {
             // 双指针
-            return doublePoint(text);
+            return twoPointers(text);
         }
 
-        public int doublePoint(String text) {
+        public int twoPointers(String text) {
             int n = text.length();
             int left = 0, right = n - 1, point = 0;
             int ans = 0;

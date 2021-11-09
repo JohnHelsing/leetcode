@@ -66,6 +66,11 @@ public class Q0026_RemoveDuplicatesFromSortedArray {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int removeDuplicates(int[] nums) {
+            // 快慢双指针
+            return twoPointersWithFastAndSlow(nums);
+        }
+
+        public int twoPointersWithFastAndSlow(int[] nums) {
             int n = nums.length;
             if (n < 2) {
                 return n;

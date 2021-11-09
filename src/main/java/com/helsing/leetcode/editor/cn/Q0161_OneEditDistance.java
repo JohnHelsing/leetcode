@@ -49,12 +49,12 @@ public class Q0161_OneEditDistance {
             }
 
             // 双指针
-            return doublePoint(s, t);
+            return twoPointers(s, t);
         }
 
-        public boolean doublePoint(String s, String t) {
+        public boolean twoPointers(String s, String t) {
             if (s.length() > t.length()) {
-                return doublePoint(t, s);
+                return twoPointers(t, s);
             }
             int left = 0, rightS = s.length() - 1, rightL = t.length() - 1;
             while (left <= rightS) {

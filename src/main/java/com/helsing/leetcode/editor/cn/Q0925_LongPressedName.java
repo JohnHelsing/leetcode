@@ -59,6 +59,10 @@ public class Q0925_LongPressedName {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isLongPressedName(String name, String typed) {
+            return twoPointers(name, typed);
+        }
+
+        public boolean twoPointers(String name, String typed) {
             if (typed.length() < name.length()) {
                 return false;
             }

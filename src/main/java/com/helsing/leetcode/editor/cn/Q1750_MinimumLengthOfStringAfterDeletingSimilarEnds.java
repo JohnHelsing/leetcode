@@ -65,10 +65,10 @@ public class Q1750_MinimumLengthOfStringAfterDeletingSimilarEnds {
     class Solution {
         public int minimumLength(String s) {
             // 三指针
-            return doublePoint(s);
+            return twoPointers(s);
         }
 
-        public int doublePoint(String s) {
+        public int twoPointers(String s) {
             int n = s.length();
             int left = 0, right = n - 1;
             int ans = 0;

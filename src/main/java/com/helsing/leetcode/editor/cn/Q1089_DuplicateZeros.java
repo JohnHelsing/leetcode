@@ -45,6 +45,11 @@ public class Q1089_DuplicateZeros {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public void duplicateZeros(int[] arr) {
+            // 双指针  快慢指针
+            twoPointersWithFastAndSlow(arr);
+        }
+
+        public void twoPointersWithFastAndSlow(int[] arr) {
             int n = arr.length;
             // 定义快慢指针
             int slow = 0, fast = 0;

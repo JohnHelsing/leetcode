@@ -41,10 +41,10 @@ public class Q0777_SwapAdjacentInLrString {
     class Solution {
         public boolean canTransform(String start, String end) {
             // 双指针
-            return doublePoint(start, end);
+            return twoPointers(start, end);
         }
 
-        public boolean doublePoint(String start, String end) {
+        public boolean twoPointers(String start, String end) {
             if (start.length() != end.length())
                 return false;
 
