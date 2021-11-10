@@ -36,9 +36,18 @@ public class Learn_Stack {
         // pop 出栈
         stack.pop();
 
+        // peek 获取栈顶元素
+        stack.peek();
+
+        /**
+         * 其他辅助方法 isEmpty/size/clear
+         */
         // 判空和长度
         stack.isEmpty();
         stack.size();
+
+        // 清空
+        stack.clear();
     }
 
 }

@@ -35,6 +35,10 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
 public class Q0084_LargestRectangleInHistogram {
 
     public static void main(String[] args) {
@@ -45,8 +49,67 @@ public class Q0084_LargestRectangleInHistogram {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int largestRectangleArea(int[] heights) {
-            return 0;
+            // 单调栈
+//            return stackMonotone(heights);
+
+            // 单调栈 + 常数优化
+            return stackWithOpt(heights);
         }
+
+        public int stackWithOpt(int[] heights) {
+            int n = heights.length;
+            int[] left = new int[n];
+            int[] right = new int[n];
+            Arrays.fill(right, n);
+
+            Deque<Integer> monoStack = new ArrayDeque<>();
+            for (int i = 0; i < n; i++) {
+                while (!monoStack.isEmpty() && heights[monoStack.peek()] >= heights[i]) {
+                    right[monoStack.peek()] = i;
+                    monoStack.pop();
+                }
+                left[i] = (monoStack.isEmpty() ? -1 : monoStack.peek());
+                monoStack.push(i);
+            }
+
+            int ans = 0;
+            for (int i = 0; i < n; i++) {
+                ans = Math.max(ans, (right[i] - left[i] - 1) * heights[i]);
+            }
+            return ans;
+        }
+
+        public int stackMonotone(int[] heights) {
+            int n = heights.length;
+            int[] left = new int[n];
+            int[] right = new int[n];
+
+            Deque<Integer> monoStack = new ArrayDeque<>();
+            for (int i = 0; i < n; ++i) {
+                while (!monoStack.isEmpty() && heights[monoStack.peek()] >= heights[i]) {
+                    monoStack.pop();
+                }
+                left[i] = (monoStack.isEmpty() ? -1 : monoStack.peek());
+                monoStack.push(i);
+            }
+
+            monoStack.clear();
+            for (int i = n - 1; i >= 0; i--) {
+                while (!monoStack.isEmpty() && heights[monoStack.peek()] >= heights[i]) {
+                    monoStack.pop();
+                }
+                right[i] = (monoStack.isEmpty() ? n : monoStack.peek());
+                monoStack.push(i);
+            }
+
+            int ans = 0;
+            for (int i = 0; i < n; i++) {
+                ans = Math.max(ans, (right[i] - left[i] - 1) * heights[i]);
+            }
+            return ans;
+        }
+
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
