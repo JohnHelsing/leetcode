@@ -63,7 +63,8 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import ImmutableListNode;
+
+import com.helsing.leetcode.common.interfaces.ImmutableListNode;
 
 public class Q1265_PrintImmutableLinkedListInReverse {
 

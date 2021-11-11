@@ -50,7 +50,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import NestedInteger;
+import com.helsing.leetcode.common.bean.NestedInteger;
 
 import java.util.*;
 
