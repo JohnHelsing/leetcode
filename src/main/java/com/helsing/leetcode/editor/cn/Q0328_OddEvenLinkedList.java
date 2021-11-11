@@ -24,7 +24,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.ListNode;
+import com.helsing.leetcode.common.bean.ListNode;
 
 public class Q0328_OddEvenLinkedList {
 

@@ -67,7 +67,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.CustomFunction;
+import com.helsing.leetcode.common.bean.CustomFunction;
 
 import java.util.ArrayList;
 import java.util.Arrays;

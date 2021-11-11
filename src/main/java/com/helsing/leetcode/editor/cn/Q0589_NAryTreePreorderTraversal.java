@@ -45,7 +45,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.Node;
+import com.helsing.leetcode.common.bean.Node;
 
 import java.util.*;
 

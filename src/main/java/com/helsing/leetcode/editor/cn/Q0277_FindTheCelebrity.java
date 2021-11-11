@@ -63,7 +63,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.Relation;
+import com.helsing.leetcode.common.bean.Relation;
 
 public class Q0277_FindTheCelebrity {
 

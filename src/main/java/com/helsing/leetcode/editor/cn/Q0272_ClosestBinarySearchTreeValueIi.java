@@ -27,7 +27,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.TreeNode;
+import com.helsing.leetcode.common.bean.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Deque;

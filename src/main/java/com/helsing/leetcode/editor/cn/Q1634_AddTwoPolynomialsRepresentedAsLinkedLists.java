@@ -66,7 +66,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.PolyNode;
+import com.helsing.leetcode.common.bean.PolyNode;
 
 public class Q1634_AddTwoPolynomialsRepresentedAsLinkedLists {
 

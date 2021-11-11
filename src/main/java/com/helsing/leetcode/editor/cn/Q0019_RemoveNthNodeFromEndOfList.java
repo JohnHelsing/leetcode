@@ -40,7 +40,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.ListNode;
+import com.helsing.leetcode.common.bean.ListNode;
 
 import java.util.ArrayList;
 import java.util.Deque;
