@@ -1,6 +1,6 @@
 package com.helsing.leetcode.note.template;
 
-import com.helsing.leetcode.bean.ListNode;
+import com.helsing.leetcode.common.bean.ListNode;
 
 /**
  * 双指针

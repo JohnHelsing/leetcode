@@ -54,7 +54,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.ListNode;
+import com.helsing.leetcode.common.bean.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

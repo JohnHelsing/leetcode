@@ -1,4 +1,4 @@
-package com.helsing.leetcode.bean;
+package com.helsing.leetcode.common.bean;
 
 /**
  * @author HelSing

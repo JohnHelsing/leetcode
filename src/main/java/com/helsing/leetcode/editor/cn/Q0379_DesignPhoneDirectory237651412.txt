@@ -1,0 +1,43 @@
+    class PhoneDirectory {
+
+        Queue<Integer> numNotUsed;
+        Queue<Integer> numUsed;
+
+
+        public PhoneDirectory(int maxNumbers) {
+            numUsed = new LinkedList<>();
+            numNotUsed = new LinkedList<>();
+            for (int i = 0; i < maxNumbers; i++) {
+                numNotUsed.add(i);
+            }
+        }
+
+        public int get() {
+            numUsed.offer(numNotUsed.peek());
+            return numNotUsed.poll();
+        }
+
+        public boolean check(int number) {
+            return numNotUsed.contains(number);
+        }
+
+        public void release(int number) {
+            numNotUsed.add(number);
+            numUsed.remove(number);
+        }
+    }
+
+/**
+ * Your PhoneDirectory object will be instantiated and called as such:
+ * PhoneDirectory obj = new PhoneDirectory(maxNumbers);
+ * int param_1 = obj.get();
+ * boolean param_2 = obj.check(number);
+ * obj.release(number);
+ */
+
+//runtime_error:java.lang.NullPointerException
+  at line 17, PhoneDirectory.get
+  at line 63, __Driver__.__helperSelectMethod__
+  at line 89, __Driver__.__helper__
+  at line 110, __Driver__.main
+//last_testcase:["PhoneDirectory","check","get","check","get"] [[1],[0],[],[0],[]]

@@ -1,6 +1,6 @@
 package com.helsing.leetcode.note.template;
 
-import com.helsing.leetcode.bean.TreeNode;
+import com.helsing.leetcode.common.bean.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

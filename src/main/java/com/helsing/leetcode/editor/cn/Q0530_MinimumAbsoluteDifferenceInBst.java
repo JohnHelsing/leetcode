@@ -36,7 +36,7 @@
 
 package com.helsing.leetcode.editor.cn;
 
-import com.helsing.leetcode.bean.TreeNode;
+import com.helsing.leetcode.common.bean.TreeNode;
 
 public class Q0530_MinimumAbsoluteDifferenceInBst {
 

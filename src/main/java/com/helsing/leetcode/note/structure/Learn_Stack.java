@@ -29,24 +29,22 @@ public class Learn_Stack {
 
         /**
          * 核心三个方法 push/pop/peek
+         * push 入栈
+         * pop  出栈
+         * peek 获取栈顶元素
          */
-        // push 入栈
         stack.push(1);
-
-        // pop 出栈
         stack.pop();
-
-        // peek 获取栈顶元素
         stack.peek();
 
         /**
          * 其他辅助方法 isEmpty/size/clear
+         * isEmpty 判空
+         * size    长度
+         * clear   清空
          */
-        // 判空和长度
         stack.isEmpty();
         stack.size();
-
-        // 清空
         stack.clear();
     }
 
