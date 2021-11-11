@@ -1,5 +1,7 @@
 package com.helsing.leetcode.note.structure;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
@@ -54,5 +56,47 @@ public class Learn_Queue {
          */
         queue.peek();
         queue.element();
+    }
+
+    /**
+     * 双向队列
+     * 能够同时对头和尾进行操作
+     */
+    public void deque() {
+        /**
+         * 常用ArrayDeque做具体实现
+         */
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        /**
+         * 针对第一个元素  addFirst/removeFirst/getFirst  offerFirst/pollFirst/peekFirst
+         *
+         *           抛出异常	      特殊值
+         * 插入	   addFirst(e)	   offerFirst(e)
+         * 删除	   removeFirst()   pollFirst()
+         * 检查	   getFirst()	   peekFirst()
+         */
+        deque.addFirst(1);
+        deque.offerFirst(1);
+        deque.removeFirst();
+        deque.pollFirst();
+        deque.getFirst();
+        deque.peekFirst();
+
+        /**
+         * 针对最后一个元素 addLast/removeLast/getLast  offerLast/pollLast/peekLast
+         *
+         * 	          抛出异常	         特殊值
+         * 插入	    addLast(e)	    offerLast(e)
+         * 删除	    removeLast()	pollLast()
+         * 检查	  	getLast()	    peekLast()
+         */
+        deque.addLast(1);
+        deque.offerLast(1);
+        deque.removeLast();
+        deque.pollLast();
+        deque.getLast();
+        deque.peekLast();
+
     }
 }
