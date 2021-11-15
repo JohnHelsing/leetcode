@@ -1,9 +1,6 @@
 package com.helsing.leetcode.note.structure;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -97,6 +94,24 @@ public class Learn_Queue {
         deque.pollLast();
         deque.getLast();
         deque.peekLast();
+    }
 
+    /**
+     * 优先队列
+     */
+    public void priority() {
+        PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer x, Integer y) {
+                return x - y;
+            }
+        });
+        queue.add(1);
+        queue.offer(2);
+
+        queue.peek();
+
+        queue.remove();
+        queue.poll();
     }
 }
