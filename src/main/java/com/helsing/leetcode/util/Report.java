@@ -64,7 +64,7 @@ public class Report {
             if (name.length() == 1) {
                 split = "\t\t\t";
             }
-            System.out.println(String.format("%s:%s(%d%%)\t%d/%d", name, split,
+            System.out.println(String.format("%s:%s(%d%%)\t%03d/%03d", name, split,
                     v[0] == 0 ? 100 : Math.round(v[1] * 100 / v[0]), v[1], v[0]));
         }
     }
