@@ -1,4 +1,4 @@
-package com.helsing.leetcode.note.template;
+package com.helsing.leetcode.note.algorithm;
 
 import com.helsing.leetcode.common.bean.TreeNode;
 

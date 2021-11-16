@@ -1,9 +1,9 @@
-package com.helsing.leetcode.note.template;
+package com.helsing.leetcode.note.algorithm;
 
 import com.helsing.leetcode.common.bean.ListNode;
 
 /**
- * 双指针
+ * 双指针算法
  * 双指针一般包括左右指针，快慢指针等
  * 常用在链表、二分等算法题中
  *
@@ -69,5 +69,12 @@ public class TwoPointers {
             }
             fast++;
         }
+    }
+
+    /**
+     * 滑动窗口
+     */
+    public void slideWindow() {
+
     }
 }
