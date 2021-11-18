@@ -30,7 +30,7 @@ public class Report {
         File[] fileList = dir.listFiles((d, name) -> name.contains(".java"));
         solved = fileList.length;
         for (File file : fileList) {
-            try (Scanner scan = new Scanner(file, "utf-8");) {
+            try (Scanner scan = new Scanner(file, "utf-8")) {
                 String tempLine;
                 while ((tempLine = scan.nextLine()) != null) {
                     if (tempLine.startsWith("// Related Topics ")) {
