@@ -14,6 +14,11 @@ public class Report {
 
     private Map<String, int[]> tagsMap;
 
+    private String FILE_DIR_WINDOWS = "D:/workspace/LeetCode";
+    private String FILE_DIR_MAC = "/Users/helsing/IdeaProjects/leetcode";
+
+    private String PACKAGE_NAME = "/src/main/java/com/helsing/leetcode/editor/cn";
+
     public boolean init() {
         tagsMap = new LinkedHashMap<>();
         for (String s : STATIC_STR.split("\n")) {
@@ -22,7 +27,13 @@ public class Report {
             nums[0] = Integer.parseInt(cols[1]);
             tagsMap.put(cols[0], nums);
         }
-        String javaSourceDir = "D:\\workspace\\LeetCode\\src\\main\\java\\com\\helsing\\leetcode\\editor\\cn";
+        String javaSourceDir;
+        String osName = System.getProperty("os.name");
+        if (osName.toLowerCase(Locale.ROOT).contains("win")) {
+            javaSourceDir = FILE_DIR_WINDOWS + PACKAGE_NAME;
+        } else {
+            javaSourceDir = FILE_DIR_MAC + PACKAGE_NAME;
+        }
         File dir = new File(javaSourceDir);
         if (!dir.exists()) {
             System.out.println("目录不存在!");
