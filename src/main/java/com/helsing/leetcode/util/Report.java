@@ -49,7 +49,9 @@ public class Report {
                         for (int i = 3; i < cols.length; i++) {
                             int[] nums = tagsMap.getOrDefault(cols[i], new int[2]);
                             nums[1]++;
-                            tagsMap.put(cols[i], nums);
+                            if (!cols[i].matches("^\\d*$") && !cols[i].startsWith("\uD83D")) {
+                                tagsMap.put(cols[i], nums);
+                            }
                         }
                     }
                 }
