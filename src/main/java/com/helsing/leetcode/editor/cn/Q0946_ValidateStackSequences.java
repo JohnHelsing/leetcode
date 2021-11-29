@@ -36,19 +36,38 @@
 
 package com.helsing.leetcode.editor.cn;
 
-public class Q0946_ValidateStackSequences{
-    
-    public static void main(String[]args){
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Q0946_ValidateStackSequences {
+
+    public static void main(String[] args) {
         Solution solution = new Solution();
     }
-    
-    static
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean validateStackSequences(int[] pushed, int[] popped) {
 
+    static
+            //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean validateStackSequences(int[] pushed, int[] popped) {
+            if (pushed == null) {
+                return true;
+            }
+            return stack(pushed, popped);
+        }
+
+        public boolean stack(int[] pushed, int[] popped) {
+            Deque<Integer> stack = new ArrayDeque<>();
+            int index = 0;
+            for (int i = 0; i < pushed.length; i++) {
+                stack.push(pushed[i]);
+                while (!stack.isEmpty() && index < popped.length && popped[index] == stack.peek()) {
+                    stack.pop();
+                    index++;
+                }
+            }
+            return stack.isEmpty();
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
