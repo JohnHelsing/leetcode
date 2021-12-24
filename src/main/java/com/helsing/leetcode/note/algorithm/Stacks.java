@@ -7,6 +7,8 @@ import java.util.Deque;
 
 /**
  * 用栈解题模板
+ * <p>
+ * 有的时候打开思路，栈里不要只放目标内容，可以放一些下标等辅助内容
  *
  * @author HelSing
  * @date 2021/11/10
