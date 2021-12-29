@@ -1,4 +1,5 @@
-//给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位
+//给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧
+// 你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位
 //。 
 //
 // 返回滑动窗口中的最大值。 
@@ -62,7 +63,9 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import java.util.ArrayDeque;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.PriorityQueue;
 
 public class Q0239_SlidingWindowMaximum {
@@ -76,12 +79,45 @@ public class Q0239_SlidingWindowMaximum {
     class Solution {
         public int[] maxSlidingWindow(int[] nums, int k) {
             // 优先队列
-            return queue(nums, k);
+//            return queue(nums, k);
+
+            // 单调队列
+            return queMonotone(nums, k);
+        }
+
+
+        public int[] queMonotone(int[] nums, int k) {
+            int n = nums.length;
+            if (n < 1) {
+                return nums;
+            }
+            Deque<Integer> q = new ArrayDeque<>();
+            int[] ans = new int[n - k + 1];
+            for (int i = 0; i < k; ++i) {
+                while (!q.isEmpty() && nums[i] > nums[q.getLast()]) {
+                    q.removeLast();
+                }
+                q.addLast(i);
+            }
+            ans[0] = nums[q.getFirst()];
+            for (int i = k; i < n; ++i) {
+                while (!q.isEmpty() && nums[i] > nums[q.getLast()]) {
+                    q.removeLast();
+                }
+                q.addLast(i);
+                while (q.getFirst() <= i - k) {
+                    q.removeFirst();
+                }
+                ans[i - k + 1] = nums[q.getFirst()];
+            }
+            return ans;
+
         }
 
         public int[] queue(int[] nums, int k) {
             int n = nums.length;
-            // 1. 优先队列存放的是二元组(num,index) : 大顶堆（元素大小不同按元素大小排列，元素大小相同按下标进行排列）
+            // 1. 优先队列存放的是二元组(num,index) :
+            // 大顶堆（元素大小不同按元素大小排列，元素大小相同按下标进行排列）
             // num :   是为了比较元素大小
             // index : 是为了判断窗口的大小是否超出范围
             PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
