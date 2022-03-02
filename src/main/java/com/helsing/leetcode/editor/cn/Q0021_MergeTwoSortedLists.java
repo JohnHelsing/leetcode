@@ -59,6 +59,41 @@ public class Q0021_MergeTwoSortedLists {
  */
     class Solution {
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+            // 递归解法
+            // 考虑递归的时候就是要想，我某个点应该怎么办，然后交给框架去做
+            recur(l1, l2);
+
+            // 双指针解法
+            return doublePoint(l1, l2);
+        }
+
+        private ListNode doublePoint(ListNode l1, ListNode l2) {
+            // 虚拟头结点
+            ListNode dummy = new ListNode(-1), p = dummy;
+            ListNode p1 = l1, p2 = l2;
+            while (p1 != null && p2 != null) {
+                // 比较 p1 和 p2 两个指针
+                // 将值较小的的节点接到 p 指针
+                if (p1.val > p2.val) {
+                    p.next = p2;
+                    p2 = p2.next;
+                } else {
+                    p.next = p1;
+                    p1 = p1.next;
+                }
+                // p 指针不断前进
+                p = p.next;
+            }
+            if (p1 != null) {
+                p.next = p1;
+            }
+            if (p2 != null) {
+                p.next = p2;
+            }
+            return dummy.next;
+        }
+
+        public ListNode recur(ListNode l1, ListNode l2) {
             if (l1 == null) {
                 return l2;
             } else if (l2 == null) {

@@ -61,6 +61,7 @@ public class Q1717_MaximumScoreFromRemovingSubstrings {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maximumGain(String s, int x, int y) {
+            int a = Integer.MAX_VALUE;
             if (x < y) {
                 return maximumGain(new StringBuffer(s).reverse().toString(), y, x);
             }
