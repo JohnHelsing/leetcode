@@ -37,6 +37,7 @@
 package com.helsing.leetcode.editor.cn;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -44,6 +45,8 @@ public class Q0046_Permutations {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
+        int[] c = {1, 2, 3};
+        solution.permute(c);
     }
 
     static
@@ -53,18 +56,42 @@ public class Q0046_Permutations {
             // 回溯法
             List<List<Integer>> ans = new ArrayList<>();
             // 记录「路径」
-            LinkedList<Integer> track = new LinkedList<>();
+//            LinkedList<Integer> track = new LinkedList<>();
             // 「路径」中的元素会被标记为 true，避免重复使用
-            boolean[] used = new boolean[nums.length];
-            backtracking(ans, nums, track, used);
+//            boolean[] used = new boolean[nums.length];
+//            backtracking(ans, nums, track, used);
+
+            // 还可以使用交换方法来减小空间开销
+            List<Integer> track = new ArrayList<>();
+            for (int num : nums) {
+                track.add(num);
+            }
+            backtrackingWithSwap(ans, nums, track, 0);
             return ans;
+        }
+
+        private void backtrackingWithSwap(List<List<Integer>> ans,
+                                          int[] nums, List<Integer> track, int depth) {
+            if (depth == nums.length) {
+                ans.add(new ArrayList<>(track));
+            }
+            for (int i = depth; i < nums.length; i++) {
+                // 动态维护数组
+                Collections.swap(track, depth, i);
+                // 继续递归填下一个数
+                backtrackingWithSwap(ans, nums, track, depth + 1);
+                // 撤销操作
+                Collections.swap(track, depth, i);
+            }
+
         }
 
         /**
          * // 路径：记录在 track 中
          * // 选择列表：nums 中不存在于 track 的那些元素
-         * // 结束条件：nums 中的元素全都在 track 中出现         * @param ans
+         * // 结束条件：nums 中的元素全都在 track 中出现
          *
+         * @param ans
          * @param nums
          * @param track 路径
          * @param used

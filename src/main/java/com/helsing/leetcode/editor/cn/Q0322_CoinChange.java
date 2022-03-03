@@ -52,13 +52,12 @@ public class Q0322_CoinChange {
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int coinChange(int[] coins, int amount) {
-            // 备忘录模式
-            int[] memo = new int[amount + 1];
-            // dp 数组全都初始化为特殊值
-            Arrays.fill(memo, -2);
             // 穷举动态规划(递归写法)
 //            return dp(coins, amount);
             // 带备忘录的动态规划(递归写法)
+//            int[] memo = new int[amount + 1];
+            // dp 数组全都初始化为特殊值
+//            Arrays.fill(memo, amount + 1);
 //            return dpWithMemo(memo, coins, amount);
             // 自底向上的dp数组方法(迭代写法)
             return dpWithDpTable(coins, amount);
@@ -66,9 +65,8 @@ public class Q0322_CoinChange {
 
         public int dpWithDpTable(int[] coins, int amount) {
             int[] dp = new int[amount + 1];
-            // 数组大小为 amount + 1，初始值也为 amount + 1
+            // 数组大小为 amount + 1，初始值为特殊值amount + 1
             Arrays.fill(dp, amount + 1);
-
             // base case
             dp[0] = 0;
             // 外层 for 循环在遍历所有状态的所有取值
@@ -92,7 +90,7 @@ public class Q0322_CoinChange {
             if (amount < 0) {
                 return -1;
             }
-            if (memo[amount] != -2) {
+            if (memo[amount] != amount + 1) {
                 return memo[amount];
             }
             int ans = Integer.MAX_VALUE;

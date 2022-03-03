@@ -16,6 +16,10 @@ import com.helsing.leetcode.editor.cn.Q0509_FibonacciNumber;
  */
 public class DP {
 
+    public static void main(String[] args) {
+
+    }
+
     /**
      * 解题思路
      * 明确 base case -> 明确「状态」-> 明确「选择」 -> 定义 dp 数组/函数的含义。

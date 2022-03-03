@@ -1,9 +1,6 @@
 package com.helsing.leetcode.note.algorithm;
 
-import com.helsing.leetcode.editor.cn.Q0046_Permutations;
-import com.helsing.leetcode.editor.cn.Q0047_PermutationsIi;
-import com.helsing.leetcode.editor.cn.Q0051_NQueens;
-import com.helsing.leetcode.editor.cn.Q0052_NQueensIi;
+import com.helsing.leetcode.editor.cn.*;
 
 /**
  * 其实回溯算法其实就是我们常说的 DFS 算法，本质上就是一种暴力穷举算法。
@@ -17,7 +14,11 @@ import com.helsing.leetcode.editor.cn.Q0052_NQueensIi;
  * @author HelSing
  * @date 2022/3/2
  */
-public class DFS_Backtracking {
+public class Backtracking {
+
+    public static void main(String[] args) {
+
+    }
 
     /**
      *
@@ -59,5 +60,8 @@ public class DFS_Backtracking {
 
         // N皇后II
         Q0052_NQueensIi.main(null);
+
+        // 不同的岛屿数量
+        Q0694_NumberOfDistinctIslands.main(null);
     }
 }

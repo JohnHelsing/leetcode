@@ -18,6 +18,10 @@ import com.helsing.leetcode.editor.cn.Q0752_OpenTheLock;
  */
 public class BFS {
 
+    public static void main(String[] args) {
+        
+    }
+
     /**
      * 问题的本质就是让你在一幅「图」中找到从起点 start 到终点 target 的最近距离，
      * 这个例子听起来很枯燥，但是 BFS 算法问题其实都是在干这个事儿

@@ -1,4 +1,4 @@
-package com.helsing.leetcode.note.structure;
+package com.helsing.leetcode.note.algorithm;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author HelSing
  * @date 2021/10/29
  */
-public class Heapsort {
+public class Sort_Heapsort {
 
     /**
      * “下沉”调整

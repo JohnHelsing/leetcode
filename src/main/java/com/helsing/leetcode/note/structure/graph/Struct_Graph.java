@@ -1,4 +1,4 @@
-package com.helsing.leetcode.note.structure;
+package com.helsing.leetcode.note.structure.graph;
 
 import com.helsing.leetcode.note.algorithm.Tarjan;
 
@@ -8,7 +8,10 @@ import com.helsing.leetcode.note.algorithm.Tarjan;
  * @author HelSing
  * @date 2021/11/15
  */
-public class Learn_Graph {
+public class Struct_Graph {
+    public static void main(String[] args) {
+
+    }
 
     /**
      * 图(graph)是一种比较松散的数据结构。

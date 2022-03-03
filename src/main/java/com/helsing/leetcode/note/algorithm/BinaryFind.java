@@ -10,6 +10,10 @@ package com.helsing.leetcode.note.algorithm;
  */
 public class BinaryFind {
 
+    public static void main(String[] args) {
+
+    }
+
     private void template() {
         String template = """
                 int left = 0, right = ...;
@@ -27,4 +31,5 @@ public class BinaryFind {
                     return ...;
                 """;
     }
+
 }

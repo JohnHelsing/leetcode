@@ -1,4 +1,4 @@
-package com.helsing.leetcode.note.structure;
+package com.helsing.leetcode.note.structure.que;
 
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
@@ -11,7 +11,11 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author HelSing
  * @date 2021/11/9
  */
-public class Learn_Queue {
+public class Struct_Queue {
+
+    public static void main(String[] args) {
+
+    }
 
     /**
      * 单向队列

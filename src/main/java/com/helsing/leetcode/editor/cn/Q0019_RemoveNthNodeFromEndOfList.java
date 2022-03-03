@@ -93,6 +93,7 @@ public class Q0019_RemoveNthNodeFromEndOfList {
                 cur = cur.next;
                 cnt++;
             }
+            // 删除倒数第K个节点
             pre.next = pre.next.next;
             return dummyNode.next;
         }

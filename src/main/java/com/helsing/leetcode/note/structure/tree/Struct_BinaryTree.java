@@ -1,4 +1,4 @@
-package com.helsing.leetcode.note.structure;
+package com.helsing.leetcode.note.structure.tree;
 
 import com.helsing.leetcode.common.bean.TreeNode;
 
@@ -21,7 +21,7 @@ import java.util.Queue;
  * @author HelSing
  * @date 2022/3/2
  */
-public class Learn_BinaryTree {
+public class Struct_BinaryTree {
 
     /**
      * 前中后序遍历

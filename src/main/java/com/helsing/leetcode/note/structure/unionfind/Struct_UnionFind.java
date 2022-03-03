@@ -1,10 +1,13 @@
-package com.helsing.leetcode.note.structure;
+package com.helsing.leetcode.note.structure.unionfind;
 
 /**
+ * 并查集是一种数据结构
+ * 可以用于解决图的连通性
+ *
  * @author HelSing
  * @date 2021/11/18
  */
-public class Learn_UnionFind {
+public class Struct_UnionFind {
 
     public static void main(String[] args) {
         UnionFind unionFind = new UnionFind(10);

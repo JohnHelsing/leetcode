@@ -12,6 +12,9 @@ import com.helsing.leetcode.common.bean.ListNode;
  */
 public class TwoPointers {
 
+    public static void main(String[] args) {
+
+    }
 
     /**
      * 左右双指针
