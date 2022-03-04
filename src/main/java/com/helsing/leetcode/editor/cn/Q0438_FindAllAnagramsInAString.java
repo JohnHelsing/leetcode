@@ -1,4 +1,5 @@
-//给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。 
+//给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，
+// 返回这些子串的起始索引。不考虑答案输出的顺序。
 //
 // 异位词 指由相同字母重排列形成的字符串（包括相同的字符串）。 
 //
@@ -38,7 +39,9 @@
 package com.helsing.leetcode.editor.cn;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Q0438_FindAllAnagramsInAString {
 
@@ -52,9 +55,48 @@ public class Q0438_FindAllAnagramsInAString {
         public List<Integer> findAnagrams(String s, String p) {
             // 滑动窗口
             return slideWindows(s, p);
+//            return slideWindowsWithArray(s, p);
         }
 
         public List<Integer> slideWindows(String s, String p) {
+            List<Integer> ans = new ArrayList<>();
+            Map<Character, Integer> window = new HashMap<>();
+            Map<Character, Integer> need = new HashMap<>();
+            for (char c : p.toCharArray()) {
+                need.put(c, need.getOrDefault(c, 0) + 1);
+            }
+            int left = 0;
+            int right = 0;
+            int valid = 0;
+            while (right < s.length()) {
+                char c = s.charAt(right);
+                // 更新窗口内容
+                if (need.get(c) != null) {
+                    window.put(c, window.getOrDefault(c, 0) + 1);
+                    if (window.get(c).equals(need.get(c))) {
+                        valid++;
+                    }
+                }
+                right++;
+                // 判断是否需要缩小左边界
+                while (right - left >= p.length()) {
+                    if (valid == need.size()) {
+                        ans.add(left);
+                    }
+                    char d = s.charAt(left);
+                    if (need.get(d) != null && window.get(d) != null) {
+                        if (need.get(d).equals(window.get(d))) {
+                            valid--;
+                        }
+                        window.put(d, window.get(d) - 1);
+                    }
+                    left++;
+                }
+            }
+            return ans;
+        }
+
+        public List<Integer> slideWindowsWithArray(String s, String p) {
             int sLen = s.length(), pLen = p.length();
 
             if (sLen < pLen) {

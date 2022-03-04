@@ -1,4 +1,4 @@
-package com.helsing.leetcode.note.trick;
+package com.helsing.leetcode.note.type;
 
 /**
  * 位运算
@@ -8,4 +8,7 @@ package com.helsing.leetcode.note.trick;
  */
 public class BitTwiddlingHacks {
 
+    public static void main(String[] args) {
+
+    }
 }

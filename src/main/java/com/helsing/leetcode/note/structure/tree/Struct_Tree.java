@@ -10,7 +10,7 @@ public class Struct_Tree {
 
     public static void main(String[] args) {
         // 普通树
-
+        Struct_Tree.main(null);
         // 二叉树
         Struct_BinaryTree.main(null);
     }

@@ -11,6 +11,7 @@ import com.helsing.leetcode.note.structure.que.Struct_Queue;
 import com.helsing.leetcode.note.structure.stack.Struct_Stack;
 import com.helsing.leetcode.note.structure.tree.Struct_Tree;
 import com.helsing.leetcode.note.structure.unionfind.Struct_UnionFind;
+import com.helsing.leetcode.note.type.*;
 
 /**
  * 综述
@@ -98,9 +99,9 @@ public class Main {
         // 2. 二分查找技巧
         BinaryFind.main(null);
         // 3. 滑动窗口算法技巧
-
+        SlideWindow.main(null);
         // 4. 回文串相关技巧(马拉车算法（Manacher 算法）)
-
+        Manacher.main(null);
         // 5. 前缀和
 
         // 6. 差分数组
@@ -116,11 +117,14 @@ public class Main {
         DP.main(null);
         // 5. 分治算法
         DivideAndConquer.main(null);
+        // 6. 贪心算法
+        GreedyAlgorithm.main(null);
 
         // 三. 图论
         // 1. Dijkstra 算法
-
+        Dijkstra.main(null);
         // 2. Tarjan算法
+        Tarjan.main(null);
 
         // 四. 其他
         // 1. LRU
@@ -138,7 +142,7 @@ public class Main {
         Struct_Array.main(null);
         // 二。链表(单向链表、双向链表)
         Struct_LinkedList.main(null);
-        // 三。队列(单向队列、双向队列)
+        // 三。队列(单向队列、双向队列、优先队列)
         Struct_Queue.main(null);
         // 四。栈(栈、单调栈)
         Struct_Stack.main(null);
@@ -158,8 +162,28 @@ public class Main {
      * 设计
      */
     private void design() {
-        // LRU
-
-        // LFU
+        // 1. LRU
+        LFU.main(null);
+        // 2. LFU
+        LRU.main(null);
     }
+
+    /**
+     * 经典系列类型
+     */
+    private void type() {
+        // 1. nSum问题
+        NSum.main(null);
+        // 2. 岛屿问题
+        IslandQuestion.main(null);
+        // 3. 打家劫舍问题
+        HouseRobberQuestion.main(null);
+        // 4. 股票问题
+        StockQuestion.main(null);
+        // 5. 排列组合问题
+        PermutationAndCombination.main(null);
+        // 6. 位运算
+        BitTwiddlingHacks.main(null);
+    }
+
 }

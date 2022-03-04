@@ -8,4 +8,8 @@ package com.helsing.leetcode.note.type;
  */
 public class NSum {
 
+    public static void main(String[] args) {
+        
+    }
+
 }

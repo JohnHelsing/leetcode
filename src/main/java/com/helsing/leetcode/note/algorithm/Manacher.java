@@ -1,15 +1,13 @@
 package com.helsing.leetcode.note.algorithm;
 
 /**
- * Tarjan算法
- * 主要用于图中算割点
+ * 马拉车算法
  *
  * @author HelSing
- * @date 2021/11/15
+ * @date 2022/3/4
  */
-public class Tarjan {
-
+public class Manacher {
     public static void main(String[] args) {
-        
+
     }
 }

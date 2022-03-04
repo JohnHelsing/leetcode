@@ -47,33 +47,33 @@ public class Q0047_PermutationsIi {
     static
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        // 路径 选择条件 结束条件
+        List<List<Integer>> ans = new ArrayList<>();
+        LinkedList<Integer> trackList = new LinkedList<>();
+
         public List<List<Integer>> permuteUnique(int[] nums) {
-            List<List<Integer>> ans = new ArrayList<>();
-            // 路径 选择条件 结束条件
-            LinkedList<Integer> trackList = new LinkedList<>();
             // 「路径」中的元素会被标记为 true，避免重复使用
             boolean[] used = new boolean[nums.length];
             // 要保证数据不被重复使用功能
             Arrays.sort(nums);
-            backtracking(nums, ans, 0, trackList, used);
+            backtracking(nums, 0, used);
             return ans;
         }
 
-        public void backtracking(int[] nums, List<List<Integer>> ans,
-                                 int idx, List<Integer> perm, boolean[] used) {
-            if (idx == nums.length) {
-                ans.add(new ArrayList<Integer>(perm));
+        public void backtracking(int[] nums, int start, boolean[] used) {
+            if (start == nums.length) {
+                ans.add(new ArrayList<>(trackList));
                 return;
             }
             for (int i = 0; i < nums.length; ++i) {
                 if (used[i] || (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])) {
                     continue;
                 }
-                perm.add(nums[i]);
+                trackList.add(nums[i]);
                 used[i] = true;
-                backtracking(nums, ans, idx + 1, perm, used);
+                backtracking(nums, start + 1, used);
                 used[i] = false;
-                perm.remove(idx);
+                trackList.removeLast();
             }
         }
     }

@@ -8,4 +8,7 @@ package com.helsing.leetcode.note.type;
  */
 public class StockQuestion {
 
+    public static void main(String[] args) {
+
+    }
 }

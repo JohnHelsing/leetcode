@@ -47,7 +47,9 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Q0003_LongestSubstringWithoutRepeatingCharacters {
@@ -71,10 +73,32 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
             }
 
             // 滑动窗口法
-            return windows(s);
+            return slideWindows(s);
+//            return windows(s);
 
             // 动态规划
 //            return dp(s);
+        }
+
+        private int slideWindows(String s) {
+            Map<Character, Integer> window = new HashMap<>();
+            int left = 0;
+            int right = 0;
+            int ans = 0;
+            while (right < s.length()) {
+                char c = s.charAt(right);
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                right++;
+                while (window.getOrDefault(c, 0) > 1) {
+                    char d = s.charAt(left);
+                    left++;
+                    // 进行窗口内数据的一系列更新
+                    window.put(d, window.get(d) - 1);
+                }
+                // 在这里更新答案
+                ans = Math.max(ans, right - left);
+            }
+            return ans;
         }
 
         public int windows(String s) {
