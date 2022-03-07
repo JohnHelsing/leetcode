@@ -78,6 +78,30 @@ public class Q0025_ReverseNodesInKGroup {
  */
     class Solution {
         public ListNode reverseKGroup(ListNode head, int k) {
+            // 迭代
+//            iteration(head, k);
+            // 递归
+            if (head == null) {
+                return null;
+            }
+            // 区间 [a, b) 包含 k 个待反转元素
+            ListNode a, b;
+            a = b = head;
+            for (int i = 0; i < k; i++) {
+                // 不足 k 个，不需要反转，base case
+                if (b == null) {
+                    return head;
+                }
+                b = b.next;
+            }
+            // 反转前 k 个元素
+            ListNode newHead = reverse(a, b);
+            // 递归反转后续链表并连接起来
+            a.next = reverseKGroup(b, k);
+            return newHead;
+        }
+
+        public ListNode iteration(ListNode head, int k) {
             ListNode hair = new ListNode(0);
             hair.next = head;
             ListNode pre = hair;
@@ -106,15 +130,29 @@ public class Q0025_ReverseNodesInKGroup {
         }
 
         public ListNode[] myReverse(ListNode head, ListNode tail) {
-            ListNode prev = tail.next;
-            ListNode p = head;
-            while (prev != tail) {
-                ListNode nex = p.next;
-                p.next = prev;
-                prev = p;
-                p = nex;
+            ListNode pre = tail.next;
+            ListNode cur = head;
+            while (pre != tail) {
+                ListNode next = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = next;
             }
             return new ListNode[]{tail, head};
+        }
+
+        ListNode reverse(ListNode a, ListNode b) {
+            ListNode pre = null;
+            ListNode cur = a;
+            // while 终止的条件改一下就行了
+            while (cur != b) {
+                ListNode next = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = next;
+            }
+            // 返回反转后的头结点
+            return pre;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

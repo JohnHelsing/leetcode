@@ -103,8 +103,9 @@ public class Main {
         // 4. 回文串相关技巧(马拉车算法（Manacher 算法）)
         Manacher.main(null);
         // 5. 前缀和
-
+        PreSum.main(null);
         // 6. 差分数组
+        DiffArray.main(null);
 
         // 二. 二叉树系列算法
         // 1. BFS

@@ -1,5 +1,6 @@
 package com.helsing.leetcode.note.structure.linkedlist;
 
+import com.helsing.leetcode.common.bean.ListNode;
 import com.helsing.leetcode.editor.cn.*;
 
 /**
@@ -61,5 +62,49 @@ public class Struct_LinkedList {
          * 只要是对的人，就算开始错过了，最终还是会再次相遇在一起的。
          */
         Q0160_IntersectionOfTwoLinkedLists.main(null);
+
+        /**
+         * 反转单链表
+         */
+        Q0206_ReverseLinkedList.main(null);
+
+
+        /**
+         * 反转前N个单链表
+         */
+        reverseN(null, 0);
+
+        /**
+         * 反转链表的一部分
+         */
+        Q0092_ReverseLinkedListIi.main(null);
+
+        /**
+         * K 个一组翻转链表
+         */
+        Q0025_ReverseNodesInKGroup.main(null);
+
+        /**
+         * 回文链表
+         */
+        Q0234_PalindromeLinkedList.main(null);
+
+    }
+
+    ListNode successor = null; // 后驱节点
+
+    public ListNode reverseN(ListNode head, int n) {
+        if (n == 1) {
+            // 记录第 n + 1 个节点
+            successor = head.next;
+            return head;
+        }
+        // 以 head.next 为起点，需要反转前 n - 1 个节点
+        ListNode last = reverseN(head.next, n - 1);
+
+        head.next.next = head;
+        // 让反转之后的 head 节点和后面的节点连起来
+        head.next = successor;
+        return last;
     }
 }

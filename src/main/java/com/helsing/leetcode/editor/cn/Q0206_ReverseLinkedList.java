@@ -79,35 +79,39 @@ public class Q0206_ReverseLinkedList {
             // 双指针
 //            return doublePoint(head);
 
-            // 迭代
-//            return recur(head, null);
+            // 递归
+            return recur(head);
 
             // 头插法
-            return headInsert(head);
+//            return headInsert(head);
         }
 
         public ListNode headInsert(ListNode head) {
-            ListNode headNew = new ListNode(-1);
-            headNew.next = head;
+            ListNode dummy = new ListNode(-1);
+            dummy.next = head;
             ListNode last = head;
             while (head != null) {
                 ListNode next = head.next;
                 //头插法
-                head.next = headNew.next;
-                headNew.next = head;
+                head.next = dummy.next;
+                dummy.next = head;
                 head = next;
             }
             last.next = null;
-            return headNew.next;
+            return dummy.next;
         }
 
-        public ListNode recur(ListNode cur, ListNode pre) {
-            if (cur == null) {
-                return pre;
+        public ListNode recur(ListNode head) {
+            // 对于递归算法，最重要的就是明确递归函数的定义。
+            if (head == null || head.next == null) {
+                return head;
             }
-            ListNode res = recur(cur.next, cur);
-            cur.next = pre;
-            return res;
+            // 返回的是递归结果（已经反转好的链表的头）
+            ListNode last = recur(head.next);
+            // 修改本节点
+            head.next.next = head;
+            head.next = null;
+            return last;
         }
 
         public ListNode doublePoint(ListNode head) {

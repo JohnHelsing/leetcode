@@ -54,11 +54,30 @@ public class Q0234_PalindromeLinkedList {
  * }
  */
     class Solution {
+        // 左侧指针
+        ListNode left;
+
         public boolean isPalindrome(ListNode head) {
             if (head == null || head.next == null) {
                 return true;
             }
+            // 普通递归
+//            left = head;
+//            return reverse(head);
+
+            // 双指针优化
             return twoPointersFastAndSlow(head);
+        }
+
+        private boolean reverse(ListNode right) {
+            if (right == null) {
+                return true;
+            }
+            boolean res = reverse(right.next);
+            // 后序遍历代码
+            res = res && (right.val == left.val);
+            left = left.next;
+            return res;
         }
 
         public boolean twoPointersFastAndSlow(ListNode head) {
