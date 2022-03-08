@@ -1,6 +1,8 @@
 package com.helsing.leetcode.note.structure.stack;
 
 import com.helsing.leetcode.common.bean.TreeNode;
+import com.helsing.leetcode.editor.cn.Q0316_RemoveDuplicateLetters;
+import com.helsing.leetcode.editor.cn.Q1081_SmallestSubsequenceOfDistinctCharacters;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -94,6 +96,12 @@ public class Struct_Stack {
                 root = root.right;
             }
         }
+    }
+
+    public void etc() {
+        // 去除重复字母
+        Q0316_RemoveDuplicateLetters.main(null);
+        Q1081_SmallestSubsequenceOfDistinctCharacters.main(null);
     }
 
 }

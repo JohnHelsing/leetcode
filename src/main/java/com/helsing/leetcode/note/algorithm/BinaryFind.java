@@ -1,6 +1,7 @@
 package com.helsing.leetcode.note.algorithm;
 
 import com.helsing.leetcode.editor.cn.Q0034_FindFirstAndLastPositionOfElementInSortedArray;
+import com.helsing.leetcode.editor.cn.Q0410_SplitArrayLargestSum;
 import com.helsing.leetcode.editor.cn.Q0704_BinarySearch;
 
 /**
@@ -106,6 +107,9 @@ public class BinaryFind {
         // 当 nums[mid] == target 时，不要立即返回，
         // 而是增大「搜索区间」的下界 left，使得区间不断向右收缩，达到锁定右侧边界的目的。
         Q0034_FindFirstAndLastPositionOfElementInSortedArray.main(null);
+
+        // 进阶题目
+        Q0410_SplitArrayLargestSum.main(null);
     }
 
 }
