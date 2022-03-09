@@ -20,6 +20,9 @@ public class IslandQuestion {
     }
 
     public void etc() {
+        // 岛屿的周长
+        Q0463_IslandPerimeter.main(null);
+
         // 岛屿数量 FLOODFILL算法
         Q0200_NumberOfIslands.main(null);
 
