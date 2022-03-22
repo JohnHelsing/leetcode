@@ -78,7 +78,7 @@ public class Q0033_SearchInRotatedSortedArray {
                 }
                 // 这段区间单调，可以继续二分
                 if (nums[0] <= nums[mid]) {
-                    if (nums[0] <= target && target < nums[mid]) {
+                    if (nums[mid] > target && nums[0] <= target) {
                         right = mid - 1;
                     } else {
                         left = mid + 1;
