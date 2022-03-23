@@ -28,6 +28,10 @@
 
 package com.helsing.leetcode.editor.cn;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
 public class Q0096_UniqueBinarySearchTrees {
 
     public static void main(String[] args) {
@@ -37,6 +41,7 @@ public class Q0096_UniqueBinarySearchTrees {
     static
             //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int numTrees(int n) {
             int[] G = new int[n + 1];
             G[0] = 1;
