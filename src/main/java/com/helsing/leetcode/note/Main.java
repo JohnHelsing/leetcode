@@ -13,6 +13,8 @@ import com.helsing.leetcode.note.structure.tree.Struct_Tree;
 import com.helsing.leetcode.note.structure.unionfind.Struct_UnionFind;
 import com.helsing.leetcode.note.type.*;
 
+import java.util.HashMap;
+
 /**
  * 综述
  *
